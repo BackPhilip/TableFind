@@ -125,7 +125,7 @@ public class ReservationReceipt extends AppCompatActivity {
                                         receiptUserEmail.setText(ApplicationClass.user.getEmail());
 
                                         receiptRestaurantName.setText(ApplicationClass.restaurant.getName());
-                                        receiptRestaurantLocation.setText(ApplicationClass.restaurant.getLocationString());
+                                        receiptRestaurantLocation.setText(ApplicationClass.restaurant.getLocationString() + "(Click Here For Google Maps Location)");
                                         receiptRestaurantNumber.setText(ApplicationClass.restaurant.getContactNumber());
 
                                         receiptReservationFrom.setText(ApplicationClass.reservation.getTakenFrom().toString());

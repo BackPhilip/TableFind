@@ -1,0 +1,306 @@
+[
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_tablefind.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxhdpi\\tablefind.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_tablefind.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xhdpi\\tablefind.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_tablefind_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxhdpi\\tablefind_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_table4_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-hdpi\\table4_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_menu_row_layout.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\menu_row_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_add.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\add.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_menu.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\activity_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_tablefind_background.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\tablefind_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_tablefind.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-hdpi\\tablefind.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_table4_background.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\table4_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_table4.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-hdpi\\table4.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_email.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\email.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_table4_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\table4_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_tablefind.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\tablefind.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_tablefind_round.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\tablefind_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_password.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\password.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_toast.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\toast.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\menu_navigation_menu.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\menu\\navigation_menu.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_table4.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-mdpi\\table4.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_table4.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\table4.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_table4_round.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\table4_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_tablefind.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-mdpi\\tablefind.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_menu_item_detail.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\activity_menu_item_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_table_list.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\activity_table_list.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_table4_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xhdpi\\table4_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_table_row_layout.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\table_row_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_new_reservation.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\activity_new_reservation.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_table4.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxhdpi\\table4.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_row_layout.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\row_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_table4_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-mdpi\\table4_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_table4.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\table4.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_table4_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-mdpi\\table4_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_table4_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxhdpi\\table4_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_info.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\info.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_buttons.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\buttons.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_navigation_header.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\navigation_header.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_tablefind_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\tablefind_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_phone.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\phone.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_tablefind.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\tablefind.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_round_corner_toggle.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable-v24\\round_corner_toggle.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_tablefind_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxhdpi\\tablefind_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_checkcircle.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\checkcircle.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_tablefind_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\tablefind_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_tablefind_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xhdpi\\tablefind_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_exit.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\exit.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_tablefind_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-mdpi\\tablefind_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_name.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\name.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_tablefind_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xhdpi\\tablefind_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_reservation_receipt.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\activity_reservation_receipt.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_table4_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxhdpi\\table4_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_tablefind_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-hdpi\\tablefind_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_table4_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-hdpi\\table4_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_tablefind_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-hdpi\\tablefind_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_tablefind_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-mdpi\\tablefind_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_listbtn.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\listbtn.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_table4.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xhdpi\\table4.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_table4_foreground.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\table4_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_table4_round.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xhdpi\\table4_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_colordot.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\colordot.xml"
+    }
+]
