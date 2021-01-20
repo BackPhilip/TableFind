@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">TableFind</string>
+    <string name="register_headingText">Register Profile</string>
+    <string name="register_email">Enter Email</string>
+    <string name="register_FirstName">First Name</string>
+    <string name="register_LastName">Last Name</string>
+    <string name="register_password">Password</string>
+    <string name="register_confirmPassword">Confirm Password</string>
+    <string name="register_cellphone">CellPhone Number</string>
+    <string name="register_button">Register</string>
+    <string name="ToastText">customText</string>
+    <string name="loginEmail">Please Enter Email</string>
+    <string name="loginPassword">Please Enter Password</string>
+    <string name="loginButton">Login</string>
+    <string name="toRegisterButton">Register</string>
+    <string name="resetPassword">Forgot Password? Reset Here.</string>
+    <string name="keep_me_logged_in">Keep me logged in</string>
+    <string name="openDrawer">Open</string>
+    <string name="closeDrawer">Close</string>
+</resources>

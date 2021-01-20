@@ -1,0 +1,278 @@
+package com.example.tablefind.activities;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.annotation.TargetApi;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.text.InputType;
+import android.view.KeyEvent;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.GridView;
+import android.widget.TextView;
+import android.widget.TimePicker;
+
+import com.backendless.Backendless;
+import com.backendless.async.callback.AsyncCallback;
+import com.backendless.exceptions.BackendlessFault;
+import com.backendless.persistence.DataQueryBuilder;
+import com.example.tablefind.R;
+import com.example.tablefind.app_utilities.ApplicationClass;
+import com.example.tablefind.app_utilities.TableAdapter;
+import com.example.tablefind.data_models.Reservation;
+import com.example.tablefind.data_models.RestaurantTable;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+
+public class TableList extends AppCompatActivity {
+
+    GridView tableLvList;
+    TextView showLocation, restaurantNameText;
+    Button edtDateTime, menuBtn;
+
+    private View mProgressView;
+    private View mLoginFormView;
+    private TextView tvLoad;
+
+    final Calendar calendar = Calendar.getInstance();
+
+    TableAdapter adapter;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_table_list);
+        setTitle("Table List");
+
+        tableLvList = findViewById(R.id.tableLvList);
+        showLocation = findViewById(R.id.showLocation);
+        edtDateTime = findViewById(R.id.edtDateTime);
+        menuBtn = findViewById(R.id.menuBtn);
+        restaurantNameText = findViewById(R.id.restaurantNameText);
+
+        edtDateTime.setInputType(InputType.TYPE_NULL);
+
+        mLoginFormView = findViewById(R.id.login_form);
+        mProgressView = findViewById(R.id.login_progress);
+        tvLoad = findViewById(R.id.tvLoad);
+
+        restaurantNameText.setText(ApplicationClass.restaurant.getName());
+
+        String whereClause = "restaurantId = '" + ApplicationClass.restaurant.getObjectId().trim() + "'";
+        DataQueryBuilder queryBuilder = DataQueryBuilder.create();
+        queryBuilder.setWhereClause(whereClause);
+
+        Backendless.Persistence.of(RestaurantTable.class).find(queryBuilder, new AsyncCallback<List<RestaurantTable>>() {
+            @Override
+            public void handleResponse(List<RestaurantTable> response) {
+                ApplicationClass.tables = response;
+                for (RestaurantTable table : ApplicationClass.tables)
+                {
+                    table.setAvailable(true);
+                }
+            }
+
+            @Override
+            public void handleFault(BackendlessFault fault) {
+                ApplicationClass.showToast("Error: " + fault.getMessage(), 2, TableList.this);
+                showProgress(false);
+            }
+        });
+
+        edtDateTime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDateTimeDialog(edtDateTime);
+            }
+        });
+
+        menuBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TableList.this, com.example.tablefind.activities.Menu.class);
+                startActivity(intent);
+                TableList.this.finish();
+            }
+        });
+
+        showLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri gmmIntentUri = Uri.parse(ApplicationClass.restaurant.getLocationGPS());
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                mapIntent.setPackage("com.google.android.apps.maps");
+                startActivity(mapIntent);
+            }
+        });
+
+        tableLvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                if (ApplicationClass.tables.get(i).isAvailable())
+                {
+                    Intent intent = new Intent(TableList.this, NewReservation.class);
+                    ApplicationClass.table = ApplicationClass.tables.get(i);
+                    intent.putExtra("Date", calendar.getTimeInMillis());
+                    startActivity(intent);
+                    TableList.this.finish();
+                }
+                else
+                {
+                    ApplicationClass.showToast("Table is not available at that time!", 2, TableList.this);
+                }
+            }
+        });
+    }
+
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    private void showProgress(final boolean show) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
+            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
+
+            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+            mLoginFormView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 0 : 1).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+                }
+            });
+
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            mProgressView.animate().setDuration(shortAnimTime).alpha(
+                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+                }
+            });
+
+            tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
+            tvLoad.animate().setDuration(shortAnimTime).alpha(
+                    show ? 1 : 0).setListener(new AnimatorListenerAdapter() {
+                @Override
+                public void onAnimationEnd(Animator animation) {
+                    tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
+                }
+            });
+        } else {
+            mProgressView.setVisibility(show ? View.VISIBLE : View.GONE);
+            tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
+            mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
+        }
+    }
+
+    private void showDateTimeDialog(final Button edtDateTime) {
+        final DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int dayOfMonth) {
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+                datePicker.setBackgroundColor(Color.RED);
+
+                TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                        calendar.set(Calendar.MINUTE, minute);
+
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
+
+                        if (calendar.getTime().before(Calendar.getInstance().getTime()))
+                        {
+                            edtDateTime.setText("Choose a Valid Time!");
+                            edtDateTime.setTextColor(Color.RED);
+                            ApplicationClass.showToast("Please Choose a time Forward from the Current Time", 2, TableList.this);
+                        }
+                        else
+                        {
+                            edtDateTime.setText(simpleDateFormat.format(calendar.getTime()));
+                            edtDateTime.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                            TimeFilter(calendar.getTime());
+                        }
+                    }
+                };
+
+                new TimePickerDialog(TableList.this, R.style.TimePickerTheme, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
+            }
+        };
+
+        new DatePickerDialog(TableList.this, R.style.TimePickerTheme, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+    }
+
+    private void TimeFilter(final Date requiredDate)
+    {
+            showProgress(true);
+            tvLoad.setText("Filtering...");
+
+            String reservationWhereClause = "restaurantId = '" + ApplicationClass.restaurant.getObjectId().trim() + "'";
+            DataQueryBuilder reservationQueryBuilder = DataQueryBuilder.create();
+            reservationQueryBuilder.setWhereClause(reservationWhereClause);
+            reservationQueryBuilder.setGroupBy("tableId");
+
+            Backendless.Persistence.of(Reservation.class).find(reservationQueryBuilder, new AsyncCallback<List<Reservation>>() {
+                @Override
+                public void handleResponse(List<Reservation> response) {
+
+                    ApplicationClass.reservations = response;
+
+                    for (Reservation reservation : response) {
+                        if (requiredDate.after(reservation.getTakenFrom()) && requiredDate.before(reservation.getTakenTo())) {
+                            for (RestaurantTable table : ApplicationClass.tables) {
+                                if (table.getObjectId().equals(reservation.getTableId())) {
+                                    table.setAvailable(false);
+                                }
+                            }
+                        }
+                    }
+                    adapter = new TableAdapter(TableList.this, ApplicationClass.tables);
+                    tableLvList.setAdapter(adapter);
+
+                    if (!(ApplicationClass.tables.size() == 0))
+                    {
+                        tableLvList.setVisibility(View.VISIBLE);
+                    }
+                    else
+                        {
+                        tableLvList.setVisibility(View.GONE);
+                    }
+                    showProgress(false);
+                }
+
+                @Override
+                public void handleFault(BackendlessFault fault) {
+                    ApplicationClass.showToast("Error: " + fault.getMessage(), 2, TableList.this);
+                    showProgress(false);
+                }
+            });
+    }
+
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exitByBackKey();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    protected void exitByBackKey() {
+        Intent intent = new Intent(TableList.this, MainActivity.class);
+        startActivity(intent);
+        TableList.this.finish();
+    }
+}
