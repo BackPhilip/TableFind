@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
 
-        drawerLayoutMain = findViewById(R.id.drawerLayoutMain);
+       drawerLayoutMain = findViewById(R.id.drawerLayoutMain);
         mToggle = new ActionBarDrawerToggle(this, drawerLayoutMain, R.string.openDrawer, R.string.closeDrawer);
 
         drawerLayoutMain.addDrawerListener(mToggle);
