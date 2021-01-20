@@ -127,7 +127,7 @@ public class ApplicationClass extends Application
 
         if (matcher.matches()==false)
         {
-            message="Email is not correctly formatted";
+            message="Email is incorrectly formatted";
         }
         else
         {
