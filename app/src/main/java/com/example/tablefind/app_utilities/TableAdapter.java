@@ -57,9 +57,10 @@ public class TableAdapter extends BaseAdapter
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.table_row_layout, parent, false);
 
-        final ImageView tableImage = convertView.findViewById(R.id.tableImage);
         TextView tableInfo = convertView.findViewById(R.id.tableInfo);
         TextView tableAvailable = convertView.findViewById(R.id.tableAvailable);
+        final ImageView tableImage = convertView.findViewById(R.id.tableImage);
+
 
         StorageReference mImageRef = FirebaseStorage.getInstance().getReference("seatings/" + tables.get(position).getCapacity() + ".png");
         final long ONE_MEGABYTE = 1024 * 1024;
@@ -69,23 +70,25 @@ public class TableAdapter extends BaseAdapter
                 Bitmap bm = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
                 tableImage.setImageBitmap(ApplicationClass.getRoundedCornerBitmap(bm,100));
                 tableImage.setColorFilter(Color.BLACK);
+                tableImage.setImageLevel(0);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
             }
         });
+
         int nightModeFlags =
                 context.getResources().getConfiguration().uiMode &
                         Configuration.UI_MODE_NIGHT_MASK;
 
         switch (nightModeFlags) {
             case Configuration.UI_MODE_NIGHT_YES:
-                tableInfo.setTextColor(Color.BLACK);
+                tableInfo.setTextColor(Color.YELLOW);
                 break;
 
             case Configuration.UI_MODE_NIGHT_NO:
-                tableInfo.setTextColor(Color.BLACK);
+                tableInfo.setTextColor(Color.WHITE);
                 break;
         }
         tableInfo.setText(tables.get(position).getTableInfo().trim());

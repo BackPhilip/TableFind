@@ -85,7 +85,7 @@
             android:capitalize="characters"
             android:text="SELECT TIME SLOT FOR RESERVATION"
             android:textColor="@color/colorPrimaryDark"
-            android:textStyle="bold" />
+            android:textStyle="normal" />
 
         <GridView
             android:id="@+id/tableLvList"
