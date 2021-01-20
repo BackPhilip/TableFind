@@ -332,7 +332,6 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
-
             return true;
         }
         return super.onKeyDown(keyCode, event);
