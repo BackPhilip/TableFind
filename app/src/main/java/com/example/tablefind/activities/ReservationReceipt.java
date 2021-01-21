@@ -9,6 +9,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -96,8 +97,10 @@ public class ReservationReceipt extends AppCompatActivity {
                     if (response.size() == 0)
                     {
                         showProgress(false);
-                       mLoginFormView.setVisibility(View.GONE);
-                       receiptBtn.setText("You Have No Reservations(Return)");
+                        mLoginFormView.setVisibility(View.GONE);
+                        receiptBtn.setVisibility(View.VISIBLE);
+                        receiptBtn.setText("You Have No Reservations(Return)");
+                        receiptBtn.setTextColor(Color.RED);
                     }
                     else {
                         ApplicationClass.reservation = response.get(0);
@@ -188,7 +191,7 @@ public class ReservationReceipt extends AppCompatActivity {
     }
 
     protected void exitByBackKey() {
-        new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.TimePickerTheme)).setTitle("Any Issues?").setMessage("If you wish to cancel the reservation or make any changes in general, please contact the restaurant.").setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+        new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.TimePickerTheme)).setTitle("Any Issues?").setMessage("If you wish to cancel a reservation or make any changes in general, please contact the restaurant.").setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 Intent intent = new Intent(ReservationReceipt.this, MainActivity.class);
