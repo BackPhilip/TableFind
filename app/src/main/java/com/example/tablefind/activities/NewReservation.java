@@ -71,19 +71,33 @@ public class NewReservation extends AppCompatActivity {
         simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
         newReservationBtn.setText("Reserve Table for: " + simpleDateFormat.format(calendar.getTime()));
 
-        StorageReference mImageRef = FirebaseStorage.getInstance().getReference("seatings/" + ApplicationClass.table.getCapacity() + ".png");
-        final long ONE_MEGABYTE = 1024 * 1024;
-        mImageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] bytes) {
-                Bitmap bm = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                reservationImage.setImageBitmap(ApplicationClass.getRoundedCornerBitmap(bm,100));
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-            }
-        });
+        switch (ApplicationClass.table.getCapacity())
+        {
+            case 1:
+                reservationImage.setImageResource(R.mipmap.one_foreground);
+                break;
+            case 2:
+                reservationImage.setImageResource(R.mipmap.two_foreground);
+                break;
+            case 3:
+                reservationImage.setImageResource(R.mipmap.three_foreground);
+                break;
+            case 4:
+                reservationImage.setImageResource(R.mipmap.four_foreground);
+                break;
+            case 5:
+                reservationImage.setImageResource(R.mipmap.five_foreground);
+                break;
+            case 6:
+                reservationImage.setImageResource(R.mipmap.six_foreground);
+                break;
+            case 7:
+                reservationImage.setImageResource(R.mipmap.seven_foreground);
+                break;
+            case 8:
+                reservationImage.setImageResource(R.mipmap.eight_foreground);
+                break;
+        }
 
         reservationSeating.setText("Seating: " + ApplicationClass.table.getCapacity());
         reservationInfo.setText("Info: " + ApplicationClass.table.getTableInfo());
