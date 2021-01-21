@@ -32,10 +32,18 @@ com/example/tablefind/activities/Menu.java
  com.example.tablefind.activities.Menu$5
 com/example/tablefind/BuildConfig.java
  com.example.tablefind.BuildConfig
-com/example/tablefind/app_utilities/TableAdapter.java
- com.example.tablefind.app_utilities.TableAdapter
- com.example.tablefind.app_utilities.TableAdapter$1
- com.example.tablefind.app_utilities.TableAdapter$2
+com/example/tablefind/activities/ReservationReceipt.java
+ com.example.tablefind.activities.ReservationReceipt
+ com.example.tablefind.activities.ReservationReceipt$1
+ com.example.tablefind.activities.ReservationReceipt$1$1
+ com.example.tablefind.activities.ReservationReceipt$1$1$1
+ com.example.tablefind.activities.ReservationReceipt$2
+ com.example.tablefind.activities.ReservationReceipt$3
+ com.example.tablefind.activities.ReservationReceipt$4
+ com.example.tablefind.activities.ReservationReceipt$5
+ com.example.tablefind.activities.ReservationReceipt$6
+ com.example.tablefind.activities.ReservationReceipt$7
+ com.example.tablefind.activities.ReservationReceipt$8
 com/example/tablefind/activities/NewReservation.java
  com.example.tablefind.activities.NewReservation
  com.example.tablefind.activities.NewReservation$1
@@ -94,15 +102,7 @@ com/example/tablefind/activities/TableList.java
  com.example.tablefind.activities.TableList$8
  com.example.tablefind.activities.TableList$9
  com.example.tablefind.activities.TableList$9$1
-com/example/tablefind/activities/ReservationReceipt.java
- com.example.tablefind.activities.ReservationReceipt
- com.example.tablefind.activities.ReservationReceipt$1
- com.example.tablefind.activities.ReservationReceipt$1$1
- com.example.tablefind.activities.ReservationReceipt$1$1$1
- com.example.tablefind.activities.ReservationReceipt$2
- com.example.tablefind.activities.ReservationReceipt$3
- com.example.tablefind.activities.ReservationReceipt$4
- com.example.tablefind.activities.ReservationReceipt$5
- com.example.tablefind.activities.ReservationReceipt$6
- com.example.tablefind.activities.ReservationReceipt$7
- com.example.tablefind.activities.ReservationReceipt$8
+com/example/tablefind/app_utilities/TableAdapter.java
+ com.example.tablefind.app_utilities.TableAdapter
+ com.example.tablefind.app_utilities.TableAdapter$1
+ com.example.tablefind.app_utilities.TableAdapter$2
