@@ -37,112 +37,113 @@
 24-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:12:9-54
 25        android:supportsRtl="true"
 25-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:13:9-35
-26        android:theme="@style/AppTheme" >
-26-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:14:9-40
-27        <activity
-27-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:15:9-109
-28            android:name="com.example.tablefind.activities.MenuItemDetail"
-28-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:15:19-60
-29            android:screenOrientation="portrait" />
-29-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:15:61-97
-30        <activity
-30-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:16:9-103
-31            android:name="com.example.tablefind.activities.ReservationReceipt"
-31-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:16:19-64
-32            android:screenOrientation="portrait" />
-32-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:16:65-101
-33        <activity
-33-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:17:9-89
-34            android:name="com.example.tablefind.activities.Menu"
-34-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:17:19-50
-35            android:screenOrientation="portrait" />
-35-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:17:51-87
-36        <activity
-36-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:18:9-99
-37            android:name="com.example.tablefind.activities.NewReservation"
-37-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:18:19-60
-38            android:screenOrientation="portrait" />
-38-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:18:61-97
-39        <activity
-39-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:19:9-94
-40            android:name="com.example.tablefind.activities.TableList"
-40-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:19:19-55
-41            android:screenOrientation="portrait" />
-41-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:19:56-92
-42        <activity
-42-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:20:9-93
-43            android:name="com.example.tablefind.activities.Register"
-43-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:20:19-54
-44            android:screenOrientation="portrait" />
-44-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:20:55-91
-45        <activity
-45-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:21:9-97
-46            android:name="com.example.tablefind.activities.MainActivity"
-46-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:21:19-58
-47            android:screenOrientation="portrait" />
-47-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:21:59-95
-48        <activity
-48-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:22:9-28:20
-49            android:name="com.example.tablefind.activities.Login"
-49-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:22:19-51
-50            android:screenOrientation="portrait" >
-50-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:22:52-88
-51            <intent-filter>
-51-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:23:13-27:29
-52                <action android:name="android.intent.action.MAIN" />
-52-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:24:17-69
-52-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:24:25-66
-53
-54                <category android:name="android.intent.category.LAUNCHER" />
-54-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:26:17-77
-54-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:26:27-74
-55            </intent-filter>
-56        </activity>
-57
-58        <service
-58-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:30:9-36:19
-59            android:name="com.google.firebase.components.ComponentDiscoveryService"
-59-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:31:13-84
-60            android:directBootAware="true"
-60-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:35:13-43
-61            android:exported="false" >
-61-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:32:13-37
-62            <meta-data
-62-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:33:13-35:85
-63                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-63-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:34:17-107
-64                android:value="com.google.firebase.components.ComponentRegistrar" />
-64-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:35:17-82
-65        </service>
-66
-67        <provider
-67-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:26:9-31:39
-68            android:name="com.google.firebase.provider.FirebaseInitProvider"
-68-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:27:13-77
-69            android:authorities="com.example.tablefind.firebaseinitprovider"
-69-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:28:13-72
-70            android:directBootAware="true"
-70-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:29:13-43
-71            android:exported="false"
-71-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:30:13-37
-72            android:initOrder="100" />
-72-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:31:13-36
-73
-74        <activity
-74-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
-75            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-75-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
-76            android:exported="false"
-76-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
-77            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-77-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
-78
-79        <meta-data
-79-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-80            android:name="com.google.android.gms.version"
-80-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-81            android:value="@integer/google_play_services_version" />
-81-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-82    </application>
-83
-84</manifest>
+26        android:testOnly="true"
+27        android:theme="@style/AppTheme" >
+27-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:14:9-40
+28        <activity
+28-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:15:9-109
+29            android:name="com.example.tablefind.activities.MenuItemDetail"
+29-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:15:19-60
+30            android:screenOrientation="portrait" />
+30-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:15:61-97
+31        <activity
+31-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:16:9-103
+32            android:name="com.example.tablefind.activities.ReservationReceipt"
+32-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:16:19-64
+33            android:screenOrientation="portrait" />
+33-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:16:65-101
+34        <activity
+34-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:17:9-89
+35            android:name="com.example.tablefind.activities.Menu"
+35-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:17:19-50
+36            android:screenOrientation="portrait" />
+36-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:17:51-87
+37        <activity
+37-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:18:9-99
+38            android:name="com.example.tablefind.activities.NewReservation"
+38-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:18:19-60
+39            android:screenOrientation="portrait" />
+39-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:18:61-97
+40        <activity
+40-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:19:9-94
+41            android:name="com.example.tablefind.activities.TableList"
+41-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:19:19-55
+42            android:screenOrientation="portrait" />
+42-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:19:56-92
+43        <activity
+43-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:20:9-93
+44            android:name="com.example.tablefind.activities.Register"
+44-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:20:19-54
+45            android:screenOrientation="portrait" />
+45-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:20:55-91
+46        <activity
+46-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:21:9-97
+47            android:name="com.example.tablefind.activities.MainActivity"
+47-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:21:19-58
+48            android:screenOrientation="portrait" />
+48-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:21:59-95
+49        <activity
+49-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:22:9-28:20
+50            android:name="com.example.tablefind.activities.Login"
+50-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:22:19-51
+51            android:screenOrientation="portrait" >
+51-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:22:52-88
+52            <intent-filter>
+52-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:23:13-27:29
+53                <action android:name="android.intent.action.MAIN" />
+53-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:24:17-69
+53-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:24:25-66
+54
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:26:17-77
+55-->C:\Users\User\Desktop\WIL\TableFind\app\src\main\AndroidManifest.xml:26:27-74
+56            </intent-filter>
+57        </activity>
+58
+59        <service
+59-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:30:9-36:19
+60            android:name="com.google.firebase.components.ComponentDiscoveryService"
+60-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:31:13-84
+61            android:directBootAware="true"
+61-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:35:13-43
+62            android:exported="false" >
+62-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:32:13-37
+63            <meta-data
+63-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:33:13-35:85
+64                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+64-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:34:17-107
+65                android:value="com.google.firebase.components.ComponentRegistrar" />
+65-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\80b96b8459e39584abd3365a7bf0267b\jetified-firebase-storage-19.2.0\AndroidManifest.xml:35:17-82
+66        </service>
+67
+68        <provider
+68-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:26:9-31:39
+69            android:name="com.google.firebase.provider.FirebaseInitProvider"
+69-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:27:13-77
+70            android:authorities="com.example.tablefind.firebaseinitprovider"
+70-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:28:13-72
+71            android:directBootAware="true"
+71-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:29:13-43
+72            android:exported="false"
+72-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:30:13-37
+73            android:initOrder="100" />
+73-->[com.google.firebase:firebase-common:19.3.1] C:\Users\User\.gradle\caches\transforms-2\files-2.1\62f1c008bd3386b96de7a0882fb3ee98\jetified-firebase-common-19.3.1\AndroidManifest.xml:31:13-36
+74
+75        <activity
+75-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\jetified-play-services-base-17.0.0\AndroidManifest.xml:23:9-26:75
+76            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+76-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\jetified-play-services-base-17.0.0\AndroidManifest.xml:24:13-79
+77            android:exported="false"
+77-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\jetified-play-services-base-17.0.0\AndroidManifest.xml:25:13-37
+78            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+78-->[com.google.android.gms:play-services-base:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\4d0717210b0687cad87212665e90c4c5\jetified-play-services-base-17.0.0\AndroidManifest.xml:26:13-72
+79
+80        <meta-data
+80-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+81            android:name="com.google.android.gms.version"
+81-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+82            android:value="@integer/google_play_services_version" />
+82-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\User\.gradle\caches\transforms-2\files-2.1\c03ff831f337462821d0a5c03495569e\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+83    </application>
+84
+85</manifest>

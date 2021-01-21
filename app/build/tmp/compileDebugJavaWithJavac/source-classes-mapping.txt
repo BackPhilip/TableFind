@@ -32,19 +32,6 @@ com/example/tablefind/BuildConfig.java
  com.example.tablefind.BuildConfig
 com/example/tablefind/app_utilities/TableAdapter.java
  com.example.tablefind.app_utilities.TableAdapter
-com/example/tablefind/data_models/Reservation.java
- com.example.tablefind.data_models.Reservation
-com/example/tablefind/activities/Menu.java
- com.example.tablefind.activities.Menu
- com.example.tablefind.activities.Menu$1
- com.example.tablefind.activities.Menu$2
- com.example.tablefind.activities.Menu$3
- com.example.tablefind.activities.Menu$4
- com.example.tablefind.activities.Menu$5
-com/example/tablefind/app_utilities/ApplicationClass.java
- com.example.tablefind.app_utilities.ApplicationClass
-com/example/tablefind/data_models/Restaurant.java
- com.example.tablefind.data_models.Restaurant
 com/example/tablefind/activities/Login.java
  com.example.tablefind.activities.Login
  com.example.tablefind.activities.Login$1
@@ -57,6 +44,24 @@ com/example/tablefind/activities/Login.java
  com.example.tablefind.activities.Login$6
  com.example.tablefind.activities.Login$7
  com.example.tablefind.activities.Login$7$1
+com/example/tablefind/activities/ReservationReceipt.java
+ com.example.tablefind.activities.ReservationReceipt
+ com.example.tablefind.activities.ReservationReceipt$1
+ com.example.tablefind.activities.ReservationReceipt$1$1
+ com.example.tablefind.activities.ReservationReceipt$1$1$1
+ com.example.tablefind.activities.ReservationReceipt$2
+ com.example.tablefind.activities.ReservationReceipt$3
+ com.example.tablefind.activities.ReservationReceipt$4
+ com.example.tablefind.activities.ReservationReceipt$5
+ com.example.tablefind.activities.ReservationReceipt$6
+ com.example.tablefind.activities.ReservationReceipt$7
+ com.example.tablefind.activities.ReservationReceipt$8
+com/example/tablefind/app_utilities/ApplicationClass.java
+ com.example.tablefind.app_utilities.ApplicationClass
+com/example/tablefind/data_models/Restaurant.java
+ com.example.tablefind.data_models.Restaurant
+com/example/tablefind/data_models/Reservation.java
+ com.example.tablefind.data_models.Reservation
 com/example/tablefind/activities/MainActivity.java
  com.example.tablefind.activities.MainActivity
  com.example.tablefind.activities.MainActivity$1
@@ -66,6 +71,13 @@ com/example/tablefind/activities/MainActivity.java
  com.example.tablefind.activities.MainActivity$5
  com.example.tablefind.activities.MainActivity$6
  com.example.tablefind.activities.MainActivity$7
+com/example/tablefind/activities/Menu.java
+ com.example.tablefind.activities.Menu
+ com.example.tablefind.activities.Menu$1
+ com.example.tablefind.activities.Menu$2
+ com.example.tablefind.activities.Menu$3
+ com.example.tablefind.activities.Menu$4
+ com.example.tablefind.activities.Menu$5
 com/example/tablefind/activities/TableList.java
  com.example.tablefind.activities.TableList
  com.example.tablefind.activities.TableList$1
@@ -90,15 +102,3 @@ com/example/tablefind/activities/NewReservation.java
  com.example.tablefind.activities.NewReservation$5
  com.example.tablefind.activities.NewReservation$6
  com.example.tablefind.activities.NewReservation$6$1
-com/example/tablefind/activities/ReservationReceipt.java
- com.example.tablefind.activities.ReservationReceipt
- com.example.tablefind.activities.ReservationReceipt$1
- com.example.tablefind.activities.ReservationReceipt$1$1
- com.example.tablefind.activities.ReservationReceipt$1$1$1
- com.example.tablefind.activities.ReservationReceipt$2
- com.example.tablefind.activities.ReservationReceipt$3
- com.example.tablefind.activities.ReservationReceipt$4
- com.example.tablefind.activities.ReservationReceipt$5
- com.example.tablefind.activities.ReservationReceipt$6
- com.example.tablefind.activities.ReservationReceipt$7
- com.example.tablefind.activities.ReservationReceipt$8
