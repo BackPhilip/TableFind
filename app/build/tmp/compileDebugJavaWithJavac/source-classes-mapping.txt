@@ -101,4 +101,6 @@ com/example/tablefind/activities/NewReservation.java
  com.example.tablefind.activities.NewReservation$4
  com.example.tablefind.activities.NewReservation$5
  com.example.tablefind.activities.NewReservation$6
- com.example.tablefind.activities.NewReservation$6$1
+ com.example.tablefind.activities.NewReservation$7
+ com.example.tablefind.activities.NewReservation$8
+ com.example.tablefind.activities.NewReservation$8$1
