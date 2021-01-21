@@ -5,6 +5,7 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.List;
+
+import static com.example.tablefind.R.*;
 
 public class TableAdapter extends BaseAdapter
 {
@@ -55,28 +58,39 @@ public class TableAdapter extends BaseAdapter
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(R.layout.table_row_layout, parent, false);
+        convertView = inflater.inflate(layout.table_row_layout, parent, false);
 
-        TextView tableInfo = convertView.findViewById(R.id.tableInfo);
-        TextView tableAvailable = convertView.findViewById(R.id.tableAvailable);
-        final ImageView tableImage = convertView.findViewById(R.id.tableImage);
+        TextView tableInfo = convertView.findViewById(id.tableInfo);
+        TextView tableAvailable = convertView.findViewById(id.tableAvailable);
+        final ImageView tableImage = convertView.findViewById(id.tableImage);
 
-
-        StorageReference mImageRef = FirebaseStorage.getInstance().getReference("seatings/" + tables.get(position).getCapacity() + ".png");
-        final long ONE_MEGABYTE = 1024 * 1024;
-        mImageRef.getBytes(ONE_MEGABYTE).addOnSuccessListener(new OnSuccessListener<byte[]>() {
-            @Override
-            public void onSuccess(byte[] bytes) {
-                Bitmap bm = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-                tableImage.setImageBitmap(ApplicationClass.getRoundedCornerBitmap(bm,100));
-                tableImage.setColorFilter(Color.BLACK);
-                tableImage.setImageLevel(0);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-            }
-        });
+        switch (tables.get(position).getCapacity())
+        {
+            case 1:
+                tableImage.setImageResource(mipmap.one_foreground);
+                break;
+            case 2:
+                tableImage.setImageResource(mipmap.two_foreground);
+                break;
+            case 3:
+                tableImage.setImageResource(mipmap.three_foreground);
+                break;
+            case 4:
+                tableImage.setImageResource(mipmap.four_foreground);
+                break;
+            case 5:
+                tableImage.setImageResource(mipmap.five_foreground);
+                break;
+            case 6:
+                tableImage.setImageResource(mipmap.six_foreground);
+                break;
+            case 7:
+                tableImage.setImageResource(mipmap.seven_foreground);
+                break;
+            case 8:
+                tableImage.setImageResource(mipmap.eight_foreground);
+                break;
+        }
 
         int nightModeFlags =
                 context.getResources().getConfiguration().uiMode &
