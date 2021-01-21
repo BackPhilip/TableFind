@@ -1,9 +1,11 @@
 package com.example.tablefind.activities;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -15,6 +17,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,13 +32,15 @@ import com.example.tablefind.app_utilities.ApplicationClass;
 import com.example.tablefind.data_models.Reservation;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class NewReservation extends AppCompatActivity {
+public class NewReservation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
 
     ImageView reservationImage;
     TextView reservationSeating, reservationInfo;
@@ -43,6 +48,8 @@ public class NewReservation extends AppCompatActivity {
     Button newReservationBtn;
     Calendar calendar = Calendar.getInstance();
 
+    private DrawerLayout drawerLayoutMain;
+    private ActionBarDrawerToggle mToggle;
     private View mProgressView;
     private View mLoginFormView;
     private TextView tvLoad;
@@ -66,6 +73,16 @@ public class NewReservation extends AppCompatActivity {
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
+
+        drawerLayoutMain = findViewById(R.id.drawerLayoutMain);
+        mToggle = new ActionBarDrawerToggle(this, drawerLayoutMain, R.string.openDrawer, R.string.closeDrawer);
+
+        drawerLayoutMain.addDrawerListener(mToggle);
+        mToggle.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView navigationView = findViewById(R.id.mainNav);
+        navigationView.setNavigationItemSelectedListener(this);
 
         calendar.setTimeInMillis(getIntent().getLongExtra("Date",0));
         simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
@@ -108,6 +125,31 @@ public class NewReservation extends AppCompatActivity {
                 Reserve();
             }
         });
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if (mToggle.onOptionsItemSelected(item))
+        {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onNavigationItemSelected(@NonNull MenuItem item)
+    {
+        int id = item.getItemId();
+
+        if (id == R.id.logout)
+        {
+            exitByBackKey();
+        }
+        if (id == R.id.receipt)
+        {
+            Intent intent = new Intent(NewReservation.this, ReservationReceipt.class);
+            startActivity(intent);
+        }
+        return false;
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
