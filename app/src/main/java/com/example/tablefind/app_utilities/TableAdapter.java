@@ -84,7 +84,7 @@ public class TableAdapter extends BaseAdapter
 
         switch (nightModeFlags) {
             case Configuration.UI_MODE_NIGHT_YES:
-                tableInfo.setTextColor(Color.YELLOW);
+                tableInfo.setTextColor(Color.MAGENTA);
                 break;
 
             case Configuration.UI_MODE_NIGHT_NO:
