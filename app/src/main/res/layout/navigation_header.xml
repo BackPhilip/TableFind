@@ -10,6 +10,5 @@
         android:layout_width="wrap_content"
         android:layout_height="290dp"
         android:layout_weight="1"
-        android:background="@color/colorPrimary"
         app:srcCompat="@mipmap/tablefind_foreground" />
 </LinearLayout>
