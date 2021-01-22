@@ -58,8 +58,6 @@ public class Register extends AppCompatActivity {
         lytFirstName = findViewById(R.id.lytFirstName);
         lytLastName = findViewById(R.id.lytLastName);
 
-        btnRegister.setClickable(false);
-        btnRegister.setAlpha(.5f);
         textBoxFocus();
 
         lytEmail.setHintAnimationEnabled(true);

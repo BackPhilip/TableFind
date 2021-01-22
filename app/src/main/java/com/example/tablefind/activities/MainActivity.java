@@ -155,6 +155,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
        {
            Intent intent = new Intent(MainActivity.this, ReservationReceipt.class);
            startActivity(intent);
+           MainActivity.this.finish();
+       }
+       if (id == R.id.profile)
+       {
+           Intent intent = new Intent(MainActivity.this, Profile.class);
+           startActivity(intent);
+           MainActivity.this.finish();
        }
         return false;
     }
