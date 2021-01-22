@@ -74,7 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:scrollbarThumbHorizontal="@color/colorPrimary"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -105,7 +105,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:scrollbarThumbHorizontal="@color/colorPrimary"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -136,7 +136,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:scrollbarThumbHorizontal="@color/colorPrimary"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -175,7 +175,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -205,7 +205,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:clickable="true"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold|italic" />
@@ -235,7 +235,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -274,7 +274,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -303,7 +303,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -331,7 +331,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary" />
         </LinearLayout>
 
@@ -358,7 +358,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="TextView"
+                android:text="N/A"
                 android:textColor="@color/colorPrimary" />
         </LinearLayout>
 
@@ -374,5 +374,6 @@
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
         android:background="@drawable/buttons"
-        android:text="Accept" />
+        android:text="Accept"
+        android:textColor="@color/colorPrimaryDark" />
 </LinearLayout>

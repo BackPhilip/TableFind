@@ -12,6 +12,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -142,7 +143,28 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
 
         if (id == R.id.logout)
         {
-            exitByBackKey();
+            new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.TimePickerTheme)).setTitle("Return to Login").setMessage("Exit to Login Screen?").setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(NewReservation.this, Login.class);
+                    startActivity(intent);
+                    SharedPreferences emailSharedPreferences = getSharedPreferences("email", 0);
+                    SharedPreferences.Editor emailEditor = emailSharedPreferences.edit();
+                    emailEditor.putString("email","");
+
+                    emailSharedPreferences = getSharedPreferences("email", 0);
+
+                    emailEditor = emailSharedPreferences.edit();
+
+                    emailEditor.putString("email", "").commit();
+                    NewReservation.this.finish();
+                }
+            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            }).setIcon(R.drawable.exit).show();
         }
         if (id == R.id.receipt)
         {
