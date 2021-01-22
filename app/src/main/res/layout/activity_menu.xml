@@ -1,34 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:layout_gravity="center_horizontal|center_vertical"
+    android:background="@color/colorPrimaryDark"
+    android:gravity="center_horizontal|center_vertical"
     android:orientation="vertical"
+    app:layout_gravity="center_horizontal|center_vertical"
     tools:context=".activities.Menu">
 
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="200dp"
-        android:visibility="gone" />
-
-    <TextView
-        android:id="@+id/tvLoad"
+    <androidx.drawerlayout.widget.DrawerLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:linksClickable="true"
-        android:focusable="true"
-        android:gravity="center_horizontal"
-        android:text="Adding Table..."
-        android:textColor="@color/colorPrimary"
-        android:textStyle="bold"
-        android:visibility="gone" />
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:orientation="vertical"
+        tools:context=".activities.MainActivity"
+        android:id="@+id/drawerLayoutMain" >
 
     <LinearLayout
         android:id="@+id/login_form"
@@ -53,4 +42,40 @@
             android:layout_height="match_parent"
             android:layout_marginTop="10dp" />
     </LinearLayout>
-</LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/mainNav"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/colorBackground"
+        app:headerLayout="@layout/navigation_header"
+        app:itemBackground="@color/colorPrimary"
+        app:itemIconTint="@color/colorPrimaryDark"
+        app:itemShapeInsetTop="5dp"
+        app:itemTextColor="@color/colorPrimaryDark"
+        app:menu="@menu/navigation_menu" />
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="200dp"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tvLoad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:focusable="true"
+        android:gravity="center_horizontal"
+        android:linksClickable="true"
+        android:text="Adding Table..."
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:visibility="gone" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1454,6 +1454,7 @@ drawable notify_panel_notification_icon_bg
 drawable one_background
 drawable password
 drawable phone
+drawable profile
 drawable round_corner_toggle
 drawable seven_background
 drawable six_background
@@ -1635,6 +1636,7 @@ id icon_only
 id ifRoom
 id image
 id imageView
+id imageView2
 id imageView3
 id info
 id invisible
@@ -1719,6 +1721,12 @@ id pdfLink
 id peekHeight
 id percent
 id pin
+id profile
+id profileDeleteBtn
+id profileEmail
+id profileName
+id profileNumber
+id profileReturnBtn
 id progress_circular
 id progress_horizontal
 id radio
@@ -1829,7 +1837,9 @@ id textView24
 id textView3
 id textView4
 id textView5
+id textView6
 id textView7
+id textView8
 id textView9
 id text_input_end_icon
 id text_input_start_icon
@@ -1929,6 +1939,7 @@ layout activity_main
 layout activity_menu
 layout activity_menu_item_detail
 layout activity_new_reservation
+layout activity_profile
 layout activity_register
 layout activity_reservation_receipt
 layout activity_table_list

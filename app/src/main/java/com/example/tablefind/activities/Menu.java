@@ -1,18 +1,26 @@
 package com.example.tablefind.activities;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.KeyEvent;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -26,16 +34,20 @@ import com.example.tablefind.R;
 import com.example.tablefind.app_utilities.ApplicationClass;
 import com.example.tablefind.app_utilities.MenuAdapter;
 import com.example.tablefind.data_models.RestaurantMenuItem;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
 
-public class Menu extends AppCompatActivity {
+public class Menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     ListView menuLvList;
 
     TextView pdfLink;
 
     MenuAdapter adapter;
+
+    private DrawerLayout drawerLayoutMain;
+    private ActionBarDrawerToggle mToggle;
 
     private View mProgressView;
     private View mLoginFormView;
@@ -54,6 +66,16 @@ public class Menu extends AppCompatActivity {
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
+
+        drawerLayoutMain = findViewById(R.id.drawerLayoutMain);
+        mToggle = new ActionBarDrawerToggle(this, drawerLayoutMain, R.string.openDrawer, R.string.closeDrawer);
+
+        drawerLayoutMain.addDrawerListener(mToggle);
+        mToggle.syncState();
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        NavigationView navigationView = findViewById(R.id.mainNav);
+        navigationView.setNavigationItemSelectedListener(this);
 
         showProgress(true);
         tvLoad.setText("Getting Dishes...");
@@ -95,6 +117,58 @@ public class Menu extends AppCompatActivity {
         pdfLink.setTextColor(Color.BLUE);
     }
 
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        if (mToggle.onOptionsItemSelected(item))
+        {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onNavigationItemSelected(@NonNull MenuItem item)
+    {
+        int id = item.getItemId();
+
+        if (id == R.id.logout)
+        {
+            new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.TimePickerTheme)).setTitle("Return to Login").setMessage("Exit to Login Screen?").setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    Intent intent = new Intent(Menu.this, Login.class);
+                    startActivity(intent);
+                    SharedPreferences emailSharedPreferences = getSharedPreferences("email", 0);
+                    SharedPreferences.Editor emailEditor = emailSharedPreferences.edit();
+                    emailEditor.putString("email","");
+
+                    emailSharedPreferences = getSharedPreferences("email", 0);
+
+                    emailEditor = emailSharedPreferences.edit();
+
+                    emailEditor.putString("email", "").commit();
+                    Menu.this.finish();
+                }
+            }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+
+                }
+            }).setIcon(R.drawable.exit).show();
+        }
+        if (id == R.id.receipt)
+        {
+            Intent intent = new Intent(Menu.this, ReservationReceipt.class);
+            startActivity(intent);
+            Menu.this.finish();
+        }
+        if (id == R.id.profile)
+        {
+            Intent intent = new Intent(Menu.this, Profile.class);
+            startActivity(intent);
+            Menu.this.finish();
+        }
+        return false;
+    }
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {

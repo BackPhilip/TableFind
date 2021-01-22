@@ -24,6 +24,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.tablefind.activities.Profile" />
         <activity
             android:name="com.example.tablefind.activities.MenuItemDetail"
             android:screenOrientation="portrait" />
