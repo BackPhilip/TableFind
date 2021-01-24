@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
        }
        if (id == R.id.receipt)
        {
-           Intent intent = new Intent(MainActivity.this, ReservationReceipt.class);
+           Intent intent = new Intent(MainActivity.this, ReceiptList.class);
            startActivity(intent);
            MainActivity.this.finish();
        }

@@ -41,7 +41,7 @@ public class MenuAdapter extends ArrayAdapter<RestaurantMenuItem>
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.menu_row_layout, parent, false);
 
-        final ImageView dishImage = convertView.findViewById(R.id.dishImage);
+        final ImageView dishImage = convertView.findViewById(R.id.menuImage);
         TextView dishInfo = convertView.findViewById(R.id.dishInfo);
         TextView dishAvailable = convertView.findViewById(R.id.dishAvailable);
 

@@ -1588,7 +1588,6 @@ id dishDetailBtn
 id dishDetailName
 id dishDetailPrice
 id dishDetailType
-id dishImage
 id dishInfo
 id drawerLayoutMain
 id dropdown_menu
@@ -1668,6 +1667,7 @@ id masked
 id media_actions
 id menuBtn
 id menuDetailImage
+id menuImage
 id menuLvList
 id message
 id middle
@@ -1732,6 +1732,9 @@ id progress_horizontal
 id radio
 id receipt
 id receiptBtn
+id receiptImage
+id receiptInfo
+id receiptLvList
 id receiptReservationCapacity
 id receiptReservationFrom
 id receiptReservationTableInfo
@@ -1940,6 +1943,7 @@ layout activity_menu
 layout activity_menu_item_detail
 layout activity_new_reservation
 layout activity_profile
+layout activity_receipt_list
 layout activity_register
 layout activity_reservation_receipt
 layout activity_table_list
@@ -2004,6 +2008,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout receipt_row_layout
 layout row_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
