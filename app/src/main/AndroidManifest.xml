@@ -7,12 +7,13 @@
     <application
         android:name=".app_utilities.ApplicationClass"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/tablefind_foreground"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/tablefind_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.Profile"></activity>
+        <activity android:name=".activities.ReceiptList"></activity>
+        <activity android:name=".activities.Profile" />
         <activity
             android:name=".activities.MenuItemDetail"
             android:screenOrientation="portrait" />

@@ -66,100 +66,58 @@ public class ReservationReceipt extends AppCompatActivity {
 
         receiptBtn = findViewById(R.id.receiptBtn);
 
-        if (ApplicationClass.reservation != null)
-        {
-            receiptUser.setText(ApplicationClass.user.getProperty("FirstName").toString().trim() + " " + ApplicationClass.user.getProperty("LastName").toString().trim());
-            receiptUserNumber.setText(ApplicationClass.user.getProperty("Cellphone").toString().trim());
-            receiptUserEmail.setText(ApplicationClass.user.getEmail());
+        showProgress(true);
+        tvLoad.setText("Retrieving Receipt...");
 
-            receiptRestaurantName.setText(ApplicationClass.restaurant.getName());
-            receiptRestaurantLocation.setText(ApplicationClass.restaurant.getLocationString() + "(Click Here For Google Maps Location)");
-            receiptRestaurantNumber.setText(ApplicationClass.restaurant.getContactNumber());
+        String whereClause = "objectId = '" + ApplicationClass.reservation.getTableId() + "'";
+        DataQueryBuilder queryBuilder = DataQueryBuilder.create();
+        queryBuilder.setWhereClause(whereClause);
 
-            receiptReservationFrom.setText(ApplicationClass.reservation.getTakenFrom().toString());
-            receiptReservationTo.setText(ApplicationClass.reservation.getTakenTo().toString());
-            receiptReservationCapacity.setText(ApplicationClass.table.getCapacity() + "");
-            receiptReservationTableInfo.setText(ApplicationClass.table.getTableInfo());
-        }
+        Backendless.Persistence.of(RestaurantTable.class).find(queryBuilder, new AsyncCallback<List<RestaurantTable>>() {
+            @Override
+            public void handleResponse(List<RestaurantTable> response) {
+                ApplicationClass.table = response.get(0);
 
-        else
-        {
-            showProgress(true);
-            tvLoad.setText("Retrieving Receipt...");
-            String whereClause = "userId = '" + ApplicationClass.user.getObjectId().trim() + "'";
-            DataQueryBuilder queryBuilder = DataQueryBuilder.create();
-            queryBuilder.setWhereClause(whereClause);
+                String whereClause = "objectId = '" + ApplicationClass.reservation.getRestaurantId() + "'";
+                DataQueryBuilder queryBuilder = DataQueryBuilder.create();
+                queryBuilder.setWhereClause(whereClause);
 
-            Backendless.Persistence.of(Reservation.class).find(queryBuilder, new AsyncCallback<List<Reservation>>() {
-                @Override
-                public void handleResponse(List<Reservation> response) {
-                    if (response.size() == 0)
-                    {
+                Backendless.Persistence.of(Restaurant.class).find(queryBuilder, new AsyncCallback<List<Restaurant>>() {
+                    @Override
+                    public void handleResponse(List<Restaurant> response) {
+                        ApplicationClass.restaurant = response.get(0);
+
+                        receiptUser.setText(ApplicationClass.user.getProperty("FirstName").toString().trim() + " " + ApplicationClass.user.getProperty("LastName").toString().trim());
+                        receiptUserNumber.setText(ApplicationClass.user.getProperty("Cellphone").toString().trim());
+                        receiptUserEmail.setText(ApplicationClass.user.getEmail());
+
+                        receiptRestaurantName.setText(ApplicationClass.restaurant.getName());
+                        receiptRestaurantLocation.setText(ApplicationClass.restaurant.getLocationString() + "(Click Here For Google Maps Location)");
+                        receiptRestaurantNumber.setText(ApplicationClass.restaurant.getContactNumber());
+
+                        receiptReservationFrom.setText(ApplicationClass.reservation.getTakenFrom().toString());
+                        receiptReservationTo.setText(ApplicationClass.reservation.getTakenTo().toString());
+                        receiptReservationCapacity.setText(ApplicationClass.table.getCapacity() + "");
+                        receiptReservationTableInfo.setText(ApplicationClass.table.getTableInfo());
+
                         showProgress(false);
-                       mLoginFormView.setVisibility(View.GONE);
-                       receiptBtn.setText("You Have No Reservations(Return)");
                     }
-                    else {
-                        ApplicationClass.reservation = response.get(0);
 
-                        String whereClause = "objectId = '" + ApplicationClass.reservation.getTableId() + "'";
-                        DataQueryBuilder queryBuilder = DataQueryBuilder.create();
-                        queryBuilder.setWhereClause(whereClause);
-
-                        Backendless.Persistence.of(RestaurantTable.class).find(queryBuilder, new AsyncCallback<List<RestaurantTable>>() {
-                            @Override
-                            public void handleResponse(List<RestaurantTable> response) {
-                                ApplicationClass.table = response.get(0);
-
-                                String whereClause = "objectId = '" + ApplicationClass.reservation.getRestaurantId() + "'";
-                                DataQueryBuilder queryBuilder = DataQueryBuilder.create();
-                                queryBuilder.setWhereClause(whereClause);
-
-                                Backendless.Persistence.of(Restaurant.class).find(queryBuilder, new AsyncCallback<List<Restaurant>>() {
-                                    @Override
-                                    public void handleResponse(List<Restaurant> response) {
-                                        ApplicationClass.restaurant = response.get(0);
-
-                                        receiptUser.setText(ApplicationClass.user.getProperty("FirstName").toString().trim() + " " + ApplicationClass.user.getProperty("LastName").toString().trim());
-                                        receiptUserNumber.setText(ApplicationClass.user.getProperty("Cellphone").toString().trim());
-                                        receiptUserEmail.setText(ApplicationClass.user.getEmail());
-
-                                        receiptRestaurantName.setText(ApplicationClass.restaurant.getName());
-                                        receiptRestaurantLocation.setText(ApplicationClass.restaurant.getLocationString() + "(Click Here For Google Maps Location)");
-                                        receiptRestaurantNumber.setText(ApplicationClass.restaurant.getContactNumber());
-
-                                        receiptReservationFrom.setText(ApplicationClass.reservation.getTakenFrom().toString());
-                                        receiptReservationTo.setText(ApplicationClass.reservation.getTakenTo().toString());
-                                        receiptReservationCapacity.setText(ApplicationClass.table.getCapacity() + "");
-                                        receiptReservationTableInfo.setText(ApplicationClass.table.getTableInfo());
-
-                                        showProgress(false);
-                                    }
-
-                                    @Override
-                                    public void handleFault(BackendlessFault fault) {
-                                        ApplicationClass.showToast("Error: " + fault.getMessage(), 2, ReservationReceipt.this);
-                                        showProgress(false);
-                                    }
-                                });
-                            }
-
-                            @Override
-                            public void handleFault(BackendlessFault fault) {
-                                ApplicationClass.showToast("Error: " + fault.getMessage(), 2, ReservationReceipt.this);
-                                showProgress(false);
-                            }
-                        });
+                    @Override
+                    public void handleFault(BackendlessFault fault) {
+                        ApplicationClass.showToast("Error: " + fault.getMessage(), 2, ReservationReceipt.this);
+                        showProgress(false);
                     }
-                }
+                });
+            }
 
-                @Override
-                public void handleFault(BackendlessFault fault) {
-                    ApplicationClass.showToast("Error: " + fault.getMessage(), 2, ReservationReceipt.this);
-                    showProgress(false);
-                }
-            });
-        }
+            @Override
+            public void handleFault(BackendlessFault fault) {
+                ApplicationClass.showToast("Error: " + fault.getMessage(), 2, ReservationReceipt.this);
+                showProgress(false);
+            }
+        });
+
 
         receiptRestaurantLocation.setOnClickListener(new View.OnClickListener() {
             @Override

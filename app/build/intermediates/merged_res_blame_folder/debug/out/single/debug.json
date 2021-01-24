@@ -32,16 +32,16 @@
         "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-hdpi\\table4.png"
     },
     {
-        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_tablefind.xml.flat",
-        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\tablefind.xml"
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_tablefind_round.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\tablefind_round.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_one_background.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\one_background.xml"
     },
     {
-        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_tablefind_round.xml.flat",
-        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\tablefind_round.xml"
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_tablefind.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-anydpi-v26\\tablefind.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_toast.xml.flat",
@@ -112,12 +112,12 @@
         "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-mdpi\\eight.png"
     },
     {
-        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_tablefind.png.flat",
-        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\tablefind.png"
-    },
-    {
         "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_phone.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\phone.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_tablefind.png.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxxhdpi\\tablefind.png"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_round_corner_toggle.xml.flat",
@@ -298,6 +298,10 @@
     {
         "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\drawable_name.xml.flat",
         "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\drawable\\name.xml"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_receipt_row_layout.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\receipt_row_layout.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_two_round.png.flat",
@@ -514,6 +518,10 @@
     {
         "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_one_round.png.flat",
         "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\mipmap-xxhdpi\\one_round.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_receipt_list.xml.flat",
+        "source": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\src\\main\\res\\layout\\activity_receipt_list.xml"
     },
     {
         "merged": "C:\\Users\\User\\Desktop\\WIL\\TableFind\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_three_round.png.flat",
