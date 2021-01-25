@@ -52,6 +52,7 @@ public class ReceiptList extends AppCompatActivity implements NavigationView.OnN
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receipt_list);
+        setTitle("Reservation List");
 
         receiptLvList = findViewById(R.id.receiptLvList);
 
@@ -154,7 +155,7 @@ public class ReceiptList extends AppCompatActivity implements NavigationView.OnN
         }
         if (id == R.id.receipt)
         {
-            Intent intent = new Intent(ReceiptList.this, ReservationReceipt.class);
+            Intent intent = new Intent(ReceiptList.this, ReceiptList.class);
             startActivity(intent);
             ReceiptList.this.finish();
         }

@@ -168,7 +168,7 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
         }
         if (id == R.id.receipt)
         {
-            Intent intent = new Intent(NewReservation.this, ReservationReceipt.class);
+            Intent intent = new Intent(NewReservation.this, ReceiptList.class);
             startActivity(intent);
         }
         if (id == R.id.profile)
