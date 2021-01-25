@@ -92,10 +92,12 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         navigationView.setNavigationItemSelectedListener(this);
 
         restaurantNameText.setText(ApplicationClass.restaurant.getName());
+        showLocation.setTextColor(Color.GREEN);
 
         String whereClause = "restaurantId = '" + ApplicationClass.restaurant.getObjectId().trim() + "'";
         DataQueryBuilder queryBuilder = DataQueryBuilder.create();
         queryBuilder.setWhereClause(whereClause);
+        queryBuilder.setPageSize(100);
 
         Backendless.Persistence.of(RestaurantTable.class).find(queryBuilder, new AsyncCallback<List<RestaurantTable>>() {
             @Override
@@ -246,6 +248,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
             DataQueryBuilder reservationQueryBuilder = DataQueryBuilder.create();
             reservationQueryBuilder.setWhereClause(reservationWhereClause);
             reservationQueryBuilder.setGroupBy("tableId");
+            reservationQueryBuilder.setPageSize(100);
 
             Backendless.Persistence.of(Reservation.class).find(reservationQueryBuilder, new AsyncCallback<List<Reservation>>() {
                 @Override

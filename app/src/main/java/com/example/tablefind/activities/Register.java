@@ -76,7 +76,7 @@ public class Register extends AppCompatActivity {
                         String password = edtPassword.getText().toString().trim();
                         String cellphone = edtCellNumber.getText().toString().trim();
 
-                        BackendlessUser user = new BackendlessUser();
+                        final BackendlessUser user = new BackendlessUser();
                         user.setEmail(email);
                         user.setPassword(password);
                         user.setProperty("FirstName", FirstName);
@@ -91,7 +91,20 @@ public class Register extends AppCompatActivity {
                             @Override
                             public void handleResponse(BackendlessUser response) {
                                 ApplicationClass.showToast("Successfully Registered", 1, Register.this);
-                                Register.this.finish();
+
+                                Backendless.UserService.resendEmailConfirmation(user.getEmail(), new AsyncCallback<Void>() {
+                                    @Override
+                                    public void handleResponse(Void response) {
+                                        ApplicationClass.showToast("An Email Has Been Sent To You!", 1, Register.this);
+                                        showProgress(false);
+                                    }
+
+                                    @Override
+                                    public void handleFault(BackendlessFault fault) {
+                                        ApplicationClass.showToast("Error: " + fault.getMessage(), 2, Register.this);
+                                        showProgress(false);
+                                    }
+                                });
                             }
 
                             @Override

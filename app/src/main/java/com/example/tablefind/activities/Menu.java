@@ -114,7 +114,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
         pdfLink.setClickable(true);
         pdfLink.setMovementMethod(LinkMovementMethod.getInstance());
         pdfLink.setText(Html.fromHtml("<a href='" + ApplicationClass.restaurant.getMenuLink() + "'> Tap Here for PDF Menu </a>", Html.FROM_HTML_MODE_COMPACT));
-        pdfLink.setTextColor(Color.BLUE);
+        pdfLink.setTextColor(Color.RED);
     }
 
     public boolean onOptionsItemSelected(MenuItem item)
