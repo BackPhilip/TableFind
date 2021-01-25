@@ -324,7 +324,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         }
         if (id == R.id.receipt)
         {
-            Intent intent = new Intent(TableList.this, ReservationReceipt.class);
+            Intent intent = new Intent(TableList.this, ReceiptList.class);
             startActivity(intent);
             TableList.this.finish();
         }

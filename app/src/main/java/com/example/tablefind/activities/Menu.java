@@ -157,7 +157,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
         }
         if (id == R.id.receipt)
         {
-            Intent intent = new Intent(Menu.this, ReservationReceipt.class);
+            Intent intent = new Intent(Menu.this, ReceiptList.class);
             startActivity(intent);
             Menu.this.finish();
         }
