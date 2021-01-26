@@ -1721,7 +1721,7 @@ int id peekHeight 0x7f0800fd
 int id percent 0x7f0800fe
 int id pin 0x7f0800ff
 int id profile 0x7f080100
-int id profileDeleteBtn 0x7f080101
+int id profileDeactivateBtn 0x7f080101
 int id profileEmail 0x7f080102
 int id profileName 0x7f080103
 int id profileNumber 0x7f080104

@@ -188,24 +188,6 @@ public class ApplicationClass extends Application
         }
         return message;
     }//end method
-
-    public static String IDnumberValidation(String idNumber)
-    {
-        String message=" ";
-        String regex ="^(((\\d{2}((0[13578]|1[02])(0[1-9]|[12]\\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\\d|30)|02(0[1-9]|1\\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\\d{4})( |-)([01]8((( |-)\\d{1})|\\d{1}))|(\\d{4}[01]8\\d{1}))$";
-        Pattern pattern=Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(idNumber);
-
-        if(matcher.matches()==false)
-        {
-            message=idNumber+" is not a valid SA id number";
-        }
-        else
-        {
-            message="";
-        }
-        return  message;
-    }//end method
     public static void showToast(String message, int type, Activity context) {
         //info toasts
         View toastView = context.getLayoutInflater().inflate(R.layout.toast, (ViewGroup) context.findViewById((R.id.linlay)));
@@ -213,7 +195,7 @@ public class ApplicationClass extends Application
         TextView tvMessage = toastView.findViewById(R.id.tvMessage);
         tvMessage.setText(message);
         Toast toast = new Toast(context);
-        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setDuration(Toast.LENGTH_LONG);
         toast.setView(toastView);
         toast.setGravity(Gravity.BOTTOM | Gravity.FILL_HORIZONTAL, 0, 0);
         if (type == 2)
