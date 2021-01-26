@@ -1722,7 +1722,7 @@ id peekHeight
 id percent
 id pin
 id profile
-id profileDeleteBtn
+id profileDeactivateBtn
 id profileEmail
 id profileName
 id profileNumber

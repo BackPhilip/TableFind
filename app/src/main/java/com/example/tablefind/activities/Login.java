@@ -20,9 +20,14 @@ import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
+import com.backendless.persistence.DataQueryBuilder;
 import com.backendless.persistence.local.UserIdStorageFactory;
 import com.example.tablefind.R;
 import com.example.tablefind.app_utilities.ApplicationClass;
+import com.example.tablefind.data_models.Reservation;
+import com.example.tablefind.data_models.RestaurantTable;
+
+import java.util.List;
 
 public class Login extends AppCompatActivity {
     private View mProgressView;
@@ -71,28 +76,43 @@ public class Login extends AppCompatActivity {
                     Backendless.UserService.login(email, password, new AsyncCallback<BackendlessUser>() {
                         @Override
                         public void handleResponse(BackendlessUser response) {
-                            SharedPreferences emailSharedPreferences = getSharedPreferences("email", 0);
-                            SharedPreferences.Editor emailEditor = emailSharedPreferences.edit();
-                            emailEditor.putString("email","");
 
-                            if (keepMeLoggedIn.isChecked())
+                            if (response.getProperty("FirstName").toString().equals("deactivateRequest"))
                             {
-                                emailSharedPreferences = getSharedPreferences("email", 0);
-
-                                emailEditor = emailSharedPreferences.edit();
-
-                                emailEditor.putString("email", response.getUserId()).commit();
+                                ApplicationClass.showToast("Your Account is Deactivated, Please Send an Email requesting reactivation", 2, Login.this);
+                                showProgress(false);
                             }
-                            ApplicationClass.user = response;
-                            ApplicationClass.showToast("Welcome " + response.getProperty("FirstName").toString(), 1, Login.this);
-                            startActivity(new Intent(Login.this, MainActivity.class));
-                            Login.this.finish();
-                        }
+                            else {
+                                SharedPreferences emailSharedPreferences = getSharedPreferences("email", 0);
+                                SharedPreferences.Editor emailEditor = emailSharedPreferences.edit();
+                                emailEditor.putString("email", "");
 
+                                if (keepMeLoggedIn.isChecked()) {
+                                    emailSharedPreferences = getSharedPreferences("email", 0);
+
+                                    emailEditor = emailSharedPreferences.edit();
+
+                                    emailEditor.putString("email", response.getUserId()).commit();
+                                }
+                                ApplicationClass.user = response;
+                                ApplicationClass.showToast("Welcome " + response.getProperty("FirstName").toString(), 1, Login.this);
+                                startActivity(new Intent(Login.this, MainActivity.class));
+                                Login.this.finish();
+                                showProgress(false);
+                            }
+                        }
                         @Override
                         public void handleFault(BackendlessFault fault) {
-                            ApplicationClass.showToast("Error: " + fault.getMessage(), 2, Login.this);
-                            showProgress(false);
+                            if (fault.getMessage().equals("User cannot login - account is disabled"))
+                            {
+                                ApplicationClass.showToast("Your Account is Deactivated, Please Send an Email requesting reactivation", 2, Login.this);
+                                showProgress(false);
+                            }
+                            else
+                            {
+                                ApplicationClass.showToast(fault.getMessage(), 2, Login.this);
+                                showProgress(false);
+                            }
                         }
                     }, true);
                 }

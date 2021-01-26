@@ -92,10 +92,11 @@ public class Register extends AppCompatActivity {
                             public void handleResponse(BackendlessUser response) {
                                 ApplicationClass.showToast("Successfully Registered", 1, Register.this);
 
-                                Backendless.UserService.resendEmailConfirmation(user.getEmail(), new AsyncCallback<Void>() {
+                                Backendless.UserService.resendEmailConfirmation(response.getEmail(), new AsyncCallback<Void>() {
                                     @Override
                                     public void handleResponse(Void response) {
                                         ApplicationClass.showToast("An Email Has Been Sent To You!", 1, Register.this);
+                                        Register.this.finish();
                                         showProgress(false);
                                     }
 

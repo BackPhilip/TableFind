@@ -4,11 +4,11 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
 
-import android.content.ContextWrapper;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,7 +24,7 @@ import com.example.tablefind.app_utilities.ApplicationClass;
 public class Profile extends AppCompatActivity {
 
 TextView profileName, profileNumber, profileEmail;
-Button profileReturnBtn, profileDeleteBtn;
+Button profileReturnBtn, profileDeactivateBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +36,7 @@ Button profileReturnBtn, profileDeleteBtn;
         profileEmail = findViewById(R.id.profileEmail);
 
         profileReturnBtn = findViewById(R.id.profileReturnBtn);
-        profileDeleteBtn = findViewById(R.id.profileDeleteBtn);
+        profileDeactivateBtn = findViewById(R.id.profileDeactivateBtn);
 
         profileName.setText(ApplicationClass.user.getProperty("FirstName").toString() + " " + ApplicationClass.user.getProperty("LastName").toString());
         profileNumber.setText(ApplicationClass.user.getProperty("Cellphone").toString());
@@ -51,50 +51,36 @@ Button profileReturnBtn, profileDeleteBtn;
             }
         });
 
-        profileDeleteBtn.setOnClickListener(new View.OnClickListener() {
+        profileDeactivateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new AlertDialog.Builder(new ContextThemeWrapper(Profile.this, R.style.TimePickerTheme)).setTitle("Confirm Delete").setMessage("Are you sure you want to delete this profile?").setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                new AlertDialog.Builder(new ContextThemeWrapper(Profile.this, R.style.TimePickerTheme)).setTitle("Confirm Deactivation").setMessage("Are you sure you want to deactivate this profile?").setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        final IDataStore<BackendlessUser> dataStore = Backendless.Data.of( BackendlessUser.class );
-                        dataStore.findById( ApplicationClass.user.getObjectId(), new AsyncCallback<BackendlessUser>()
-                        {
+
+                        ApplicationClass.user.setProperty("FirstName", "deactivateRequest");
+                        Backendless.UserService.update(ApplicationClass.user, new AsyncCallback<BackendlessUser>() {
                             @Override
-                            public void handleResponse( BackendlessUser backendlessUser )
-                            {
-                                dataStore.remove( backendlessUser, new AsyncCallback<Long>()
-                                {
-                                    @Override
-                                    public void handleResponse( Long aLong )
-                                    {
-                                        SharedPreferences emailSharedPreferences = getSharedPreferences("email", 0);
-                                        SharedPreferences.Editor emailEditor = emailSharedPreferences.edit();
-                                        emailEditor.putString("email","");
+                            public void handleResponse(BackendlessUser response) {
+                                SharedPreferences emailSharedPreferences = getSharedPreferences("email", 0);
+                                SharedPreferences.Editor emailEditor = emailSharedPreferences.edit();
+                                emailEditor.putString("email","");
 
-                                        emailSharedPreferences = getSharedPreferences("email", 0);
+                                emailSharedPreferences = getSharedPreferences("email", 0);
 
-                                        emailEditor = emailSharedPreferences.edit();
+                                emailEditor = emailSharedPreferences.edit();
 
-                                        emailEditor.putString("email", "").commit();
-                                        ApplicationClass.showToast("User Has Been Deleted!", 1, Profile.this);
-                                        Intent intent = new Intent(Profile.this, Login.class);
-                                        startActivity(intent);
-                                        Profile.this.finish();
-                                    }
-                                    @Override
-                                    public void handleFault( BackendlessFault backendlessFault )
-                                    {
-                                        ApplicationClass.showToast("Error: " + backendlessFault, 2, Profile.this);
-                                    }
-                                } );
+                                emailEditor.putString("email", "").commit();
+                                ApplicationClass.showToast("Deactivation Request has been Sent!" ,1, Profile.this);
+                                startActivity(new Intent(Profile.this, Login.class));
+                                Profile.this.finish();
                             }
+
                             @Override
-                            public void handleFault( BackendlessFault backendlessFault )
-                            {
-                                ApplicationClass.showToast("Error: " + backendlessFault, 2, Profile.this);
+                            public void handleFault(BackendlessFault fault) {
+                                ApplicationClass.showToast("Error: " + fault.getMessage(),1, Profile.this);
                             }
-                        } );
+                        });
                     }
                 }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
