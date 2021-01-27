@@ -13,6 +13,8 @@ public class Reservation
     private String number;
     private String restaurantId;
     private Date created;
+    private Boolean active;
+    private String reasonForExpiration;
 
     public String getObjectId() {
         return objectId;
@@ -63,4 +65,12 @@ public class Reservation
     public Date getCreated() { return created; }
 
     public void setCreated(Date created) { this.created = created; }
+
+    public Boolean getActive() { return active; }
+
+    public void setActive(Boolean active) { this.active = active; }
+
+    public String getReasonForExpiration() { return reasonForExpiration; }
+
+    public void setReasonForExpiration(String reasonForExpiration) { this.reasonForExpiration = reasonForExpiration; }
 }

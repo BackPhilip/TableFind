@@ -240,6 +240,7 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
                     reservation.setTakenTo(calendar.getTime());
                     reservation.setUserId(ApplicationClass.user.getObjectId());
                     reservation.setRestaurantId(ApplicationClass.restaurant.getObjectId());
+                    reservation.setActive(true);
 
                     Backendless.Persistence.save(reservation, new AsyncCallback<Reservation>() {
                         @Override
