@@ -1,10 +1,5 @@
 package com.example.tablefind.data_models;
-
-import android.graphics.Bitmap;
-import android.location.Location;
-import android.net.Uri;
-
-import java.sql.Blob;
+import java.util.Date;
 
 public class Restaurant
 {
@@ -16,6 +11,8 @@ public class Restaurant
     private String menuLink;
     private String contactNumber;
     private int maxCapacity;
+    private Date open;
+    private Date close;
 
     public String getLocationString() {
         return locationString;
@@ -60,4 +57,12 @@ public class Restaurant
     public int getMaxCapacity() { return maxCapacity; }
 
     public void setMaxCapacity(int maxCapacity) { this.maxCapacity = maxCapacity; }
+
+    public Date getOpen() { return open; }
+
+    public void setOpen(Date open) { this.open = open; }
+
+    public Date getClose() { return close; }
+
+    public void setClose(Date close) { this.close = close; }
 }

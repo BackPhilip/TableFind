@@ -1,14 +1,18 @@
 package com.example.tablefind.activities;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.ContextThemeWrapper;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -79,7 +83,18 @@ public class Login extends AppCompatActivity {
 
                             if (response.getProperty("FirstName").toString().equals("deactivateRequest"))
                             {
-                                ApplicationClass.showToast("Your Account is Deactivated, Please Send an Email requesting reactivation", 2, Login.this);
+                                ApplicationClass.showToast("Your Account is Deactivated", 2, Login.this);
+                                new AlertDialog.Builder(new ContextThemeWrapper(Login.this, R.style.TimePickerTheme)).setTitle("Account Deactivated").setMessage("Would you like to request the reactivation of your account?").setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        ApplicationClass.showToast("The Request has been sent, please try to login in later", 1, Login.this);
+                                    }
+                                }).setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                }).setIcon(R.drawable.exit).show();
                                 showProgress(false);
                             }
                             else {

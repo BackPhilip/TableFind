@@ -216,18 +216,34 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
                         calendar.set(Calendar.MINUTE, minute);
 
                         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yy-MM-dd HH:mm");
+                        Calendar openCal = Calendar.getInstance();
+                        openCal.setTime(ApplicationClass.restaurant.getOpen());
+                        Calendar closeCal = Calendar.getInstance();
+                        closeCal.setTime(ApplicationClass.restaurant.getClose());
 
                         if (calendar.getTime().before(Calendar.getInstance().getTime()))
                         {
                             edtDateTime.setText("Choose a Valid Time!");
                             edtDateTime.setTextColor(Color.RED);
                             ApplicationClass.showToast("Please Choose a time Forward from the Current Time", 2, TableList.this);
+                            tableLvList.setVisibility(View.GONE);
                         }
                         else
                         {
-                            edtDateTime.setText(simpleDateFormat.format(calendar.getTime()));
-                            edtDateTime.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
-                            TimeFilter(calendar.getTime());
+                            if (openCal.get(Calendar.HOUR_OF_DAY) < (calendar.get(Calendar.HOUR_OF_DAY)) && closeCal.get(Calendar.HOUR_OF_DAY) > (calendar.get(Calendar.HOUR_OF_DAY)))
+                            {
+                                edtDateTime.setText(simpleDateFormat.format(calendar.getTime()));
+                                edtDateTime.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
+                                TimeFilter(calendar.getTime());
+                                tableLvList.setVisibility(View.VISIBLE);
+                            }
+                            else
+                            {
+                                edtDateTime.setText("Choose a Valid Time!");
+                                edtDateTime.setTextColor(Color.RED);
+                                ApplicationClass.showToast("The restaurant is closed at that time!", 2, TableList.this);
+                                tableLvList.setVisibility(View.GONE);
+                            }
                         }
                     }
                 };
