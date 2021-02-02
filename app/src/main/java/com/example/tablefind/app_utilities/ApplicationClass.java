@@ -35,8 +35,8 @@ import java.util.regex.Pattern;
 
 public class ApplicationClass extends Application
 {
-    public static final String APPLICATION_ID = "3341DD88-C207-2A48-FF9F-D4103CEA4900";
-    public static final String API_KEY = "7E8D50A1-FA22-4605-BBD0-8AFAC88ED24E";
+    public static final String APPLICATION_ID = "6D59291D-64B4-B4E5-FFCD-43BA19198A00";
+    public static final String API_KEY = "E77A2EEA-6522-47FE-9B3F-EBAB012C6961";
     public static final String SERVER_URL = "https://api.backendless.com";
 
     public static BackendlessUser user;

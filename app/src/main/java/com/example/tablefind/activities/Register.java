@@ -102,7 +102,7 @@ public class Register extends AppCompatActivity {
 
                                     @Override
                                     public void handleFault(BackendlessFault fault) {
-                                        ApplicationClass.showToast("Error: " + fault.getMessage(), 2, Register.this);
+                                        Register.this.finish();
                                         showProgress(false);
                                     }
                                 });
