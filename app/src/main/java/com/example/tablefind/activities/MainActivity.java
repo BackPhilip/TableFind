@@ -90,6 +90,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
+        do
+        {
+            ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 44);
+        }
+        while (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_DENIED);
+
         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
         {
             showProgress(true);
@@ -116,9 +122,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         {
                             restaurantsWLocation.add(restaurant);
                         }
-                        else {
-
-                        }
                     }
                     if (restaurantsWLocation == null || restaurantsWLocation.isEmpty()) {
                         ApplicationClass.showToast("No restaurants close to you!", 2, MainActivity.this);
@@ -133,7 +136,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 @Override
                 public void handleFault(BackendlessFault fault) {
-                    ApplicationClass.showToast("Please make sure passwords match!", 2, MainActivity.this);
+                    ApplicationClass.showToast(fault.getMessage(), 2, MainActivity.this);
                     showProgress(false);
                 }
             });
