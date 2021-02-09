@@ -14,6 +14,21 @@ public class Restaurant
     private Date open;
     private Date close;
 
+    public Restaurant() { }
+
+    public Restaurant(String name, String objectId, String locationString, String locationGPS, String ownerId, String menuLink, String contactNumber, int maxCapacity, Date open, Date close) {
+        this.name = name;
+        this.objectId = objectId;
+        this.locationString = locationString;
+        this.locationGPS = locationGPS;
+        this.ownerId = ownerId;
+        this.menuLink = menuLink;
+        this.contactNumber = contactNumber;
+        this.maxCapacity = maxCapacity;
+        this.open = open;
+        this.close = close;
+    }
+
     public String getLocationString() {
         return locationString;
     }

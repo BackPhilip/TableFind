@@ -54,68 +54,6 @@ public class ApplicationClass extends Application
         super.onCreate();
         Backendless.setUrl( SERVER_URL );
         Backendless.initApp( getApplicationContext(), APPLICATION_ID, API_KEY );
-
-        Restaurant restaurant = new Restaurant();
-        restaurant.setLocationString("San Francisco");
-        restaurant.setLocationGPS("geo:37.7749,-122.4194");
-        restaurant.setName("Stadium");
-        restaurant.setContactNumber("0713797679");
-        restaurant.setMenuLink("");
-        restaurant.setOwnerId("C3D37EF1-4A5C-402F-87B0-F04FF6AC1B59");
-
-        /*Backendless.Persistence.save(restaurant, new AsyncCallback<Restaurant>() {
-            @Override
-            public void handleResponse(Restaurant response) {
-
-            }
-
-            @Override
-            public void handleFault(BackendlessFault fault) {
-
-            }
-        });*/
-
-        RestaurantTable restaurantTable = new RestaurantTable();
-        restaurantTable.setAvailable(true);
-        restaurantTable.setCapacity(4);
-        restaurantTable.setRestaurantId("52BD5D08-F6B2-4D5E-8C37-E20420F7EC0F");
-        restaurantTable.setTableInfo("Close to Bathroom");
-        restaurantTable.setxPos(0);
-        restaurantTable.setyPos(0);
-
-        /*Backendless.Persistence.save(restaurantTable, new AsyncCallback<RestaurantTable>() {
-            @Override
-            public void handleResponse(RestaurantTable response) {
-
-            }
-
-            @Override
-            public void handleFault(BackendlessFault fault) {
-
-            }
-        });*/
-
-        Reservation reservation = new Reservation();
-        reservation.setRestaurantId("52BD5D08-F6B2-4D5E-8C37-E20420F7EC0F");
-        reservation.setUserId("F5772669-9336-4393-8DD8-4C4B6BB81CA0");
-        Calendar calendar = Calendar.getInstance();
-        reservation.setTakenTo(calendar.getTime());
-        reservation.setTakenFrom(calendar.getTime());
-        reservation.setTableId("21E0A3DE-ECED-43BD-852D-9DBEAC4D8590");
-        reservation.setName("Philip");
-        reservation.setNumber("0713797679");
-        /*Backendless.Persistence.save(reservation, new AsyncCallback<Reservation>() {
-            @Override
-            public void handleResponse(Reservation response) {
-
-            }
-
-            @Override
-            public void handleFault(BackendlessFault fault) {
-
-            }
-        });*/
-
     }
 
     public static String EmailValidation( String email)

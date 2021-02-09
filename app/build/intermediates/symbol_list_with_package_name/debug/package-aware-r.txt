@@ -1456,6 +1456,7 @@ drawable password
 drawable phone
 drawable profile
 drawable round_corner_toggle
+drawable search
 drawable seven_background
 drawable six_background
 drawable table4_background
@@ -1606,6 +1607,7 @@ id enterAlways
 id enterAlwaysCollapsed
 id etMail
 id etPassword
+id etSearch
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1662,6 +1664,7 @@ id lytEmail
 id lytFirstName
 id lytLastName
 id lytPassword
+id lytSearch
 id mainNav
 id masked
 id media_actions
