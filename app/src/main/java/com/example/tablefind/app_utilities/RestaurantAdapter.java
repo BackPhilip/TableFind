@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -36,17 +38,20 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 public class RestaurantAdapter extends BaseAdapter
 {
     private Context context;
     private List<Restaurant> restaurants;
+    LayoutInflater inflater;
 
     public RestaurantAdapter(Context context, List<Restaurant> list)
     {
         this.context = context;
         this.restaurants = list;
+        inflater = LayoutInflater.from(context);
     }
 
     @Override
@@ -56,18 +61,18 @@ public class RestaurantAdapter extends BaseAdapter
 
     @Override
     public Object getItem(int i) {
-        return null;
+        return i;
     }
 
     @Override
     public long getItemId(int i) {
-        return 0;
+        return i;
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         convertView = inflater.inflate(R.layout.row_layout, parent, false);
 
         final ImageView restaurantImage = convertView.findViewById(R.id.restaurantImage);

@@ -23,10 +23,13 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.TextView;
 
@@ -66,6 +69,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     List<Address> addresses;
 
+    private EditText etSearch;
+
+    List<Restaurant> allRestaurants;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         lvList = findViewById(R.id.lvList);
 
+        etSearch = findViewById(R.id.etSearch);
+
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
 
         do
@@ -105,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 @Override
                 public void handleResponse(List<Restaurant> response) {
 
+                    allRestaurants = response;
                     ArrayList<Restaurant> restaurantsWLocation = new ArrayList<>();
                     Location location = new Location("");
 
@@ -154,6 +164,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 ApplicationClass.restaurant = ApplicationClass.restaurants.get(i);
                 startActivity(intent);
                 MainActivity.this.finish();
+            }
+        });
+
+        etSearch.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent event) {
+                ArrayList<Restaurant> searchedRestaurants = new ArrayList<>();
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == 66))
+                {
+                    for (Restaurant restaurant : allRestaurants) {
+                        if (restaurant.getName().toLowerCase().startsWith(etSearch.getText().toString().trim().toLowerCase())) {
+                            searchedRestaurants.add(restaurant);
+                        }
+                    }
+                    adapter = new RestaurantAdapter(MainActivity.this, searchedRestaurants);
+                    lvList.setAdapter(adapter);
+                }
+                return true;
             }
         });
     }

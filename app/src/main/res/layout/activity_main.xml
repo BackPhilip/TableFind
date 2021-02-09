@@ -36,6 +36,32 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lytSearch"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:hint="Search For Restaurants"
+                android:textColorHint="@color/colorPrimaryDark"
+                app:boxStrokeColor="@color/colorAccent"
+                app:startIconDrawable="@drawable/search"
+                app:startIconTint="@color/colorPrimaryDark">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/round_corner_toggle"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textColorHighlight="@color/colorPrimaryDark"
+                    android:textColorHint="@color/colorPrimaryDark" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
             <GridView
                 android:id="@+id/lvList"
                 android:layout_width="match_parent"
