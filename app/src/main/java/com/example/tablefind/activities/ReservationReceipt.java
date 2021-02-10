@@ -1,5 +1,6 @@
 package com.example.tablefind.activities;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.ContextThemeWrapper;
@@ -9,9 +10,12 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Paint;
+import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +32,8 @@ import com.example.tablefind.data_models.Reservation;
 import com.example.tablefind.data_models.Restaurant;
 import com.example.tablefind.data_models.RestaurantTable;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.List;
 
 public class ReservationReceipt extends AppCompatActivity {
@@ -35,7 +41,7 @@ public class ReservationReceipt extends AppCompatActivity {
     TextView receiptUser, receiptUserNumber, receiptUserEmail;
     TextView receiptRestaurantName, receiptRestaurantLocation, receiptRestaurantNumber;
     TextView receiptReservationFrom, receiptReservationTo, receiptReservationCapacity, receiptReservationTableInfo;
-    Button receiptBtn;
+    Button receiptBtn, pdfBtn;
 
     private View mProgressView;
     private View mLoginFormView;
@@ -45,7 +51,7 @@ public class ReservationReceipt extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation_receipt);
-        setTitle("Receipt");
+        setTitle("Details");
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -65,6 +71,7 @@ public class ReservationReceipt extends AppCompatActivity {
         receiptReservationTableInfo = findViewById(R.id.receiptReservationTableInfo);
 
         receiptBtn = findViewById(R.id.receiptBtn);
+        pdfBtn = findViewById(R.id.pdfBtn);
 
         showProgress(true);
         tvLoad.setText("Retrieving Receipt...");
@@ -135,6 +142,15 @@ public class ReservationReceipt extends AppCompatActivity {
                 exitByBackKey();
             }
         });
+
+        pdfBtn.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+            @Override
+            public void onClick(View view) {
+                exportAsPdf();
+                ApplicationClass.showToast("Exported as My Details.pdf", 1, ReservationReceipt.this);
+            }
+        });
     }
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -197,5 +213,53 @@ public class ReservationReceipt extends AppCompatActivity {
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void exportAsPdf()
+    {
+        PdfDocument myPdfDocument = new PdfDocument();
+        PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(300, 600, 1).create();
+        PdfDocument.Page myPage = myPdfDocument.startPage(myPageInfo);
+        Paint myPaint = new Paint();
+        int x = 1, y = 10;
+
+        myPage.getCanvas().drawText("User:" + "\n", x, y, myPaint);
+        y += 15; x += 10;
+        myPage.getCanvas().drawText("Name: " + ApplicationClass.user.getProperty("FirstName").toString().trim() + "\n", x, y, myPaint);
+        y += 15;
+        myPage.getCanvas().drawText("Contact Number: " + ApplicationClass.user.getProperty("Cellphone").toString().trim() + "\n", x, y, myPaint);
+        y += 15;
+        myPage.getCanvas().drawText("Email: " + ApplicationClass.user.getEmail().trim() + "\n", x, y, myPaint);
+        y += 20; x -= 10;
+
+        myPage.getCanvas().drawText("Restaurant:" + "\n", x, y, myPaint);
+        y += 15; x += 10;
+        myPage.getCanvas().drawText("Name: " + ApplicationClass.restaurant.getName().trim() + "\n", x, y, myPaint);
+        y += 15;
+        myPage.getCanvas().drawText("Location: " + ApplicationClass.restaurant.getLocationString().trim() + "\n", x, y, myPaint);
+        y += 15;
+        myPage.getCanvas().drawText("Contact Number: " + ApplicationClass.restaurant.getContactNumber().trim() + "\n", x, y, myPaint);
+        y += 20; x -= 10;
+
+        myPage.getCanvas().drawText("Reservation:" + "\n", x, y, myPaint);
+        y += 15; x += 10;
+        myPage.getCanvas().drawText("From: " + ApplicationClass.reservation.getTakenFrom().toString().trim() + "\n", x, y, myPaint);
+        y += 15;
+        myPage.getCanvas().drawText("To: " + ApplicationClass.reservation.getTakenTo().toString().trim() + "\n", x, y, myPaint);
+        y += 15;
+        myPage.getCanvas().drawText("Capacity: " + ApplicationClass.table.getCapacity() + "" + "\n", x, y, myPaint);
+        y += 15;
+        myPage.getCanvas().drawText("Table Info: " + ApplicationClass.table.getTableInfo().trim() + "\n", x, y, myPaint);
+
+        myPdfDocument.finishPage(myPage);
+        String filePath = Environment.getExternalStorageDirectory().getPath() + "/My Details.pdf";
+        File myFile = new File(filePath);
+        try {
+            myPdfDocument.writeTo(new FileOutputStream(myFile));
+        } catch (Exception e) {
+            ApplicationClass.showToast("Error: " + e.getMessage(), 2, ReservationReceipt.this);
+        }
+        myPdfDocument.close();
     }
 }

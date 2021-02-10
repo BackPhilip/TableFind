@@ -102,7 +102,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         Backendless.Persistence.of(RestaurantTable.class).find(queryBuilder, new AsyncCallback<List<RestaurantTable>>() {
             @Override
             public void handleResponse(List<RestaurantTable> response) {
-                ApplicationClass.tables = response;
+                ApplicationClass.tables.addAll(response);
                 for (RestaurantTable table : ApplicationClass.tables)
                 {
                     table.setAvailable(true);
@@ -270,7 +270,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
                 @Override
                 public void handleResponse(List<Reservation> response) {
 
-                    ApplicationClass.reservations = response;
+                    ApplicationClass.reservations.addAll(response);
 
                     for (Reservation reservation : response) {
                         if (requiredDate.after(reservation.getTakenFrom()) && requiredDate.before(reservation.getTakenTo())) {

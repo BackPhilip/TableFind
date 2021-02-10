@@ -1,6 +1,7 @@
 package com.example.tablefind.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -39,6 +40,7 @@ import com.backendless.exceptions.BackendlessFault;
 import com.example.tablefind.R;
 import com.example.tablefind.app_utilities.ApplicationClass;
 import com.example.tablefind.app_utilities.RestaurantAdapter;
+import com.example.tablefind.data_models.Reservation;
 import com.example.tablefind.data_models.Restaurant;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -49,8 +51,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.IOException;
+import java.security.Permissions;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -72,6 +78,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private EditText etSearch;
 
     List<Restaurant> allRestaurants;
+
+    private static String[] PERMISSIONS_STORAGE = {Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE};
+
+    private ArrayList<Restaurant> searchedRestaurants = new ArrayList<>();
+
+    private ArrayList<Restaurant> restaurantsWLocation = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -114,8 +126,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 @Override
                 public void handleResponse(List<Restaurant> response) {
 
+                    ApplicationClass.restaurants.addAll(response);
                     allRestaurants = response;
-                    ArrayList<Restaurant> restaurantsWLocation = new ArrayList<>();
+                    adapter = new RestaurantAdapter(MainActivity.this, response);
+                    lvList.setAdapter(adapter);
                     Location location = new Location("");
 
                     for (Restaurant restaurant : response) {
@@ -133,14 +147,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             restaurantsWLocation.add(restaurant);
                         }
                     }
-                    if (restaurantsWLocation == null || restaurantsWLocation.isEmpty()) {
+                    if (restaurantsWLocation == null || restaurantsWLocation.isEmpty())
+                    {
                         ApplicationClass.showToast("No restaurants close to you!", 2, MainActivity.this);
-                    } else {
-                        ApplicationClass.restaurants = response;
+                        adapter = new RestaurantAdapter(MainActivity.this, response);
+                        lvList.setAdapter(adapter);
+                    }
+                    else {
                         adapter = new RestaurantAdapter(MainActivity.this, restaurantsWLocation);
                         lvList.setAdapter(adapter);
                     }
 
+                    int permission = ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    if (permission != PackageManager.PERMISSION_GRANTED) {
+                        ActivityCompat.requestPermissions(MainActivity.this, PERMISSIONS_STORAGE, 1);
+                    }
                     showProgress(false);
                 }
 
@@ -156,32 +177,44 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 44);
         }
 
-        lvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-
-                Intent intent = new Intent(MainActivity.this, TableList.class);
-                ApplicationClass.restaurant = ApplicationClass.restaurants.get(i);
-                startActivity(intent);
-                MainActivity.this.finish();
-            }
-        });
-
         etSearch.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent event) {
-                ArrayList<Restaurant> searchedRestaurants = new ArrayList<>();
                 if ((event.getAction() == KeyEvent.ACTION_DOWN) && (keyCode == 66))
                 {
-                    for (Restaurant restaurant : allRestaurants) {
-                        if (restaurant.getName().toLowerCase().startsWith(etSearch.getText().toString().trim().toLowerCase())) {
-                            searchedRestaurants.add(restaurant);
+                    ArrayList<Restaurant> list = new ArrayList<>();
+                    for (Restaurant restaurant : ApplicationClass.restaurants) {
+                        if (restaurant.getName().toLowerCase().trim().startsWith(etSearch.getText().toString().trim().toLowerCase())) {
+                            list.add(restaurant);
                         }
                     }
+                    restaurantsWLocation.clear();
+                    searchedRestaurants = list;
                     adapter = new RestaurantAdapter(MainActivity.this, searchedRestaurants);
                     lvList.setAdapter(adapter);
                 }
                 return true;
+            }
+        });
+
+        lvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+
+                if (restaurantsWLocation.isEmpty() && !searchedRestaurants.isEmpty()) {
+                    ApplicationClass.restaurant = searchedRestaurants.get(i);
+                }
+                else if (!restaurantsWLocation.isEmpty() && searchedRestaurants.isEmpty())
+                {
+                    ApplicationClass.restaurant = restaurantsWLocation.get(i);
+                }
+                else if (restaurantsWLocation.isEmpty() && searchedRestaurants.isEmpty())
+                {
+                    ApplicationClass.restaurant = ApplicationClass.restaurants.get(i);
+                }
+                Intent intent = new Intent(MainActivity.this, TableList.class);
+                startActivity(intent);
+                MainActivity.this.finish();
             }
         });
     }
