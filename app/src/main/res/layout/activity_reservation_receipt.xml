@@ -376,6 +376,19 @@
             android:text="Accept"
             android:textColor="@color/colorPrimaryDark" />
 
+        <Button
+            android:id="@+id/pdfBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/buttons"
+            android:text="Export as PDF"
+            android:textColor="@color/colorPrimaryDark" />
+
     </LinearLayout>
 
 </LinearLayout>

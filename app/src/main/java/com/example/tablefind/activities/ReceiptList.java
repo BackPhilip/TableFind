@@ -75,14 +75,14 @@ public class ReceiptList extends AppCompatActivity implements NavigationView.OnN
         queryBuilder.setWhereClause(whereClause);
 
         showProgress(true);
-        tvLoad.setText("Retrieving Receipts...");
+        tvLoad.setText("Retrieving Reservation List...");
 
         Backendless.Persistence.of(Reservation.class).find(queryBuilder, new AsyncCallback<List<Reservation>>() {
             @Override
             public void handleResponse(List<Reservation> response) {
                 if (response.size() != 0)
                 {
-                    ApplicationClass.reservations = response;
+                    ApplicationClass.reservations.addAll(response);
                     adapter = new ReceiptAdapter(ReceiptList.this, response);
                     receiptLvList.setAdapter(adapter);
                     showProgress(false);

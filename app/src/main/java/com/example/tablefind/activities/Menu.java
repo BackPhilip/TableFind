@@ -88,7 +88,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
         Backendless.Persistence.of(RestaurantMenuItem.class).find(queryBuilder, new AsyncCallback<List<RestaurantMenuItem>>() {
             @Override
             public void handleResponse(List<RestaurantMenuItem> response) {
-                ApplicationClass.menuItems = response;
+                ApplicationClass.menuItems.addAll(response);
                 adapter = new MenuAdapter(Menu.this, response);
                 menuLvList.setAdapter(adapter);
                 showProgress(false);

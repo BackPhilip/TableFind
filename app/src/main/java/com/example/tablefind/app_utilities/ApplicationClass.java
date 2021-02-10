@@ -28,6 +28,7 @@ import com.example.tablefind.data_models.Restaurant;
 import com.example.tablefind.data_models.RestaurantMenuItem;
 import com.example.tablefind.data_models.RestaurantTable;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -40,13 +41,13 @@ public class ApplicationClass extends Application
     public static final String SERVER_URL = "https://api.backendless.com";
 
     public static BackendlessUser user;
-    public static List<Restaurant> restaurants;
+    public static ArrayList<Restaurant> restaurants = new ArrayList<>();
     public static Restaurant restaurant;
-    public static List<RestaurantTable> tables;
+    public static ArrayList<RestaurantTable> tables = new ArrayList<>();
     public static RestaurantTable table;
-    public static List<Reservation> reservations;
+    public static ArrayList<Reservation> reservations = new ArrayList<>();
     public static Reservation reservation;
-    public static List<RestaurantMenuItem> menuItems;
+    public static ArrayList<RestaurantMenuItem> menuItems = new ArrayList<>();
     public static RestaurantMenuItem menuItem;
 
     @Override
