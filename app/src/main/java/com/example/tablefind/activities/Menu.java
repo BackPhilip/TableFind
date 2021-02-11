@@ -42,8 +42,6 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
 
     ListView menuLvList;
 
-    TextView pdfLink;
-
     MenuAdapter adapter;
 
     private DrawerLayout drawerLayoutMain;
@@ -60,8 +58,6 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
         setTitle("Menu");
 
         menuLvList = findViewById(R.id.menuLvList);
-
-        pdfLink = findViewById(R.id.pdfLink);
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -110,11 +106,6 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
                 Menu.this.finish();
             }
         });
-
-        pdfLink.setClickable(true);
-        pdfLink.setMovementMethod(LinkMovementMethod.getInstance());
-        pdfLink.setText(Html.fromHtml("<a href='" + ApplicationClass.restaurant.getMenuLink() + "'> Tap Here for PDF Menu </a>", Html.FROM_HTML_MODE_COMPACT));
-        pdfLink.setTextColor(Color.RED);
     }
 
     public boolean onOptionsItemSelected(MenuItem item)
