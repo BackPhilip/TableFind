@@ -36,6 +36,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 
+import weborb.client.ant.wdm.Table;
+
 public class ReservationReceipt extends AppCompatActivity {
 
     TextView receiptUser, receiptUserNumber, receiptUserEmail;
@@ -74,16 +76,13 @@ public class ReservationReceipt extends AppCompatActivity {
         pdfBtn = findViewById(R.id.pdfBtn);
 
         showProgress(true);
-        tvLoad.setText("Retrieving Receipt...");
+        tvLoad.setText("Retrieving Details...");
 
-        String whereClause = "objectId = '" + ApplicationClass.reservation.getTableId() + "'";
-        DataQueryBuilder queryBuilder = DataQueryBuilder.create();
-        queryBuilder.setWhereClause(whereClause);
-
-        Backendless.Persistence.of(RestaurantTable.class).find(queryBuilder, new AsyncCallback<List<RestaurantTable>>() {
+        Backendless.Persistence.of(RestaurantTable.class).find(new AsyncCallback<List<RestaurantTable>>() {
             @Override
             public void handleResponse(List<RestaurantTable> response) {
                 ApplicationClass.table = response.get(0);
+                ApplicationClass.tables.addAll(response);
 
                 String whereClause = "objectId = '" + ApplicationClass.reservation.getRestaurantId() + "'";
                 DataQueryBuilder queryBuilder = DataQueryBuilder.create();
@@ -222,35 +221,64 @@ public class ReservationReceipt extends AppCompatActivity {
         PdfDocument.PageInfo myPageInfo = new PdfDocument.PageInfo.Builder(300, 600, 1).create();
         PdfDocument.Page myPage = myPdfDocument.startPage(myPageInfo);
         Paint myPaint = new Paint();
-        int x = 1, y = 10;
+        int y = 10;
+        int reservationNumberX = 1;
+        int subHeadingX = 16;
+        int dataX = 21;
+        int counter = 0;
 
-        myPage.getCanvas().drawText("User:" + "\n", x, y, myPaint);
-        y += 15; x += 10;
-        myPage.getCanvas().drawText("Name: " + ApplicationClass.user.getProperty("FirstName").toString().trim() + "\n", x, y, myPaint);
-        y += 15;
-        myPage.getCanvas().drawText("Contact Number: " + ApplicationClass.user.getProperty("Cellphone").toString().trim() + "\n", x, y, myPaint);
-        y += 15;
-        myPage.getCanvas().drawText("Email: " + ApplicationClass.user.getEmail().trim() + "\n", x, y, myPaint);
-        y += 20; x -= 10;
+        for (Reservation reservation : ApplicationClass.reservations)
+        {
+            counter = counter + 1;
+            myPage.getCanvas().drawText("Reservation " + counter, reservationNumberX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("User:" + "\n", subHeadingX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("Name: " + ApplicationClass.user.getProperty("FirstName").toString().trim() + "\n", dataX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("Contact Number: " + ApplicationClass.user.getProperty("Cellphone").toString().trim() + "\n", dataX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("Email: " + ApplicationClass.user.getEmail().trim() + "\n", dataX, y, myPaint);
+            y += 20;
 
-        myPage.getCanvas().drawText("Restaurant:" + "\n", x, y, myPaint);
-        y += 15; x += 10;
-        myPage.getCanvas().drawText("Name: " + ApplicationClass.restaurant.getName().trim() + "\n", x, y, myPaint);
-        y += 15;
-        myPage.getCanvas().drawText("Location: " + ApplicationClass.restaurant.getLocationString().trim() + "\n", x, y, myPaint);
-        y += 15;
-        myPage.getCanvas().drawText("Contact Number: " + ApplicationClass.restaurant.getContactNumber().trim() + "\n", x, y, myPaint);
-        y += 20; x -= 10;
+            Restaurant thisRestaurant = new Restaurant();
+            for (Restaurant restaurant: ApplicationClass.restaurants)
+            {
+                if (restaurant.getObjectId().equals(reservation.getRestaurantId()))
+                {
+                    thisRestaurant = restaurant;
+                    break;
+                }
+            }
+            myPage.getCanvas().drawText("Restaurant:" + "\n", subHeadingX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("Name: " + thisRestaurant.getName().trim() + "\n", dataX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("Location: " + thisRestaurant.getLocationString().trim() + "\n", dataX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("Contact Number: " + thisRestaurant.getContactNumber().trim() + "\n", dataX, y, myPaint);
+            y += 20;
 
-        myPage.getCanvas().drawText("Reservation:" + "\n", x, y, myPaint);
-        y += 15; x += 10;
-        myPage.getCanvas().drawText("From: " + ApplicationClass.reservation.getTakenFrom().toString().trim() + "\n", x, y, myPaint);
-        y += 15;
-        myPage.getCanvas().drawText("To: " + ApplicationClass.reservation.getTakenTo().toString().trim() + "\n", x, y, myPaint);
-        y += 15;
-        myPage.getCanvas().drawText("Capacity: " + ApplicationClass.table.getCapacity() + "" + "\n", x, y, myPaint);
-        y += 15;
-        myPage.getCanvas().drawText("Table Info: " + ApplicationClass.table.getTableInfo().trim() + "\n", x, y, myPaint);
+            RestaurantTable thisTable = new RestaurantTable();
+            for (RestaurantTable table : ApplicationClass.tables)
+            {
+                if (table.getObjectId().equals(reservation.getTableId()))
+                {
+                    thisTable = table;
+                    break;
+                }
+            }
+            myPage.getCanvas().drawText("Reservation:" + "\n", subHeadingX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("From: " + reservation.getTakenFrom().toString().trim() + "\n", dataX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("To: " + reservation.getTakenTo().toString().trim() + "\n", dataX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("Capacity: " + thisTable.getCapacity() + "" + "\n", dataX, y, myPaint);
+            y += 15;
+            myPage.getCanvas().drawText("Table Info: " + thisTable.getTableInfo().trim() + "\n", dataX, y, myPaint);
+            y += 40;
+        }
 
         myPdfDocument.finishPage(myPage);
         String filePath = Environment.getExternalStorageDirectory().getPath() + "/My Details.pdf";
