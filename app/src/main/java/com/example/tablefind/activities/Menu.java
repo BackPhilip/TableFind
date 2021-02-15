@@ -102,6 +102,10 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
+        //
+        //Name      : onItemClick for Menu Selection
+        //Purpose   : Opens menu item details.
+        //
         menuLvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -112,6 +116,14 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
     }
+
+    //
+    //Method Name      : boolean onOptionItemSelected()
+    //Purpose          : Passes the selected item.
+    //Re-use           :
+    //Input Parameters : MenuItem item
+    //Output Type      : boolean
+    //
 
     public boolean onOptionsItemSelected(MenuItem item)
     {
