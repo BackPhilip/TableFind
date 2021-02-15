@@ -135,7 +135,7 @@ public class ApplicationClass extends Application
 
     //
     //Method Name      : String PhoneNumberValidation()
-    //Purpose          : Checks phone number entrie for validity.
+    //Purpose          : Checks phone number entry for validity.
     //Re-use           : none
     //Input Parameters : String
     //Output Type      : String
