@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:gravity="center_horizontal"
-            android:text="Tables"
+            android:text="@string/restaurantNameText"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -45,10 +45,11 @@
             android:clickable="true"
             android:gravity="center_horizontal"
             android:linksClickable="true"
-            android:text="Tap Here for Restaurant in Google Maps"
+            android:text="@string/tap_here_for_restaurant_in_google_maps"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:focusable="true" />
 
         <Button
             android:id="@+id/menuBtn"
@@ -60,7 +61,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/buttons"
-            android:text="Check Food Availability"
+            android:text="@string/check_food_availability"
             android:textColor="@color/colorPrimaryDark" />
 
         <Button
@@ -72,7 +73,7 @@
             android:layout_marginRight="30dp"
             android:background="@drawable/buttons"
             android:capitalize="characters"
-            android:text="SELECT TIME SLOT FOR RESERVATION"
+            android:text="@string/select_time_slot_for_reservation"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="normal" />
 
@@ -117,7 +118,7 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center_horizontal"
-        android:text="Adding Table..."
+        android:text="@string/adding_table"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:visibility="gone" />

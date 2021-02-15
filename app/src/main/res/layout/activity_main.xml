@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
                 android:gravity="center_horizontal"
-                android:text="Restaurants"
+                android:text="@string/textview"
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -44,7 +44,7 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
-                android:hint="Search For Restaurants"
+                android:hint="@string/search_for_restaurants"
                 android:textColorHint="@color/colorPrimaryDark"
                 app:boxStrokeColor="@color/colorAccent"
                 app:startIconDrawable="@drawable/search"
@@ -96,7 +96,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="200dp"
         android:outlineAmbientShadowColor="@color/colorBackground"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:targetApi="p" />
 
     <TextView
         android:id="@+id/tvLoad"
@@ -106,7 +107,7 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center_horizontal"
-        android:text="Loading...please wait..."
+        android:text="@string/loading_please_wait"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:visibility="gone" />

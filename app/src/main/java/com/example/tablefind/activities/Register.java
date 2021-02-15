@@ -21,6 +21,10 @@ import com.example.tablefind.R;
 import com.example.tablefind.app_utilities.ApplicationClass;
 import com.google.android.material.textfield.TextInputLayout;
 
+/// <summary>
+/// Activity to Register a new BackendlessUser
+/// </summary>
+
 public class Register extends AppCompatActivity {
 
     private View mProgressView;
@@ -38,6 +42,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         setTitle("Register");
 
+        /// Initialization vvv ///
         mLoginFormView = findViewById(R.id.register_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
@@ -62,7 +67,10 @@ public class Register extends AppCompatActivity {
 
         lytEmail.setHintAnimationEnabled(true);
         lytEmail.setHint("Email");
-
+        //
+        //Name             : onClick for Register button
+        //Purpose          : checks if text boxes aren't empty and registers a new User if they aren't empty
+        //
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,6 +133,14 @@ public class Register extends AppCompatActivity {
             }
         });
     }
+
+    //
+    //Method Name      : void showProgress()
+    //Purpose          : Initialise and instantiate the progress bar and progress text
+    //Re-use           : in onCreate()
+    //Input Parameters : boolean show
+    //Output Type      : void
+    //
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     private void showProgress(final boolean show) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
@@ -163,6 +179,13 @@ public class Register extends AppCompatActivity {
         }
     }
 
+    //
+    //Method Name      : void textBoxFocus()
+    //Purpose          : Uses validation methods in Application class to ensure that the information given is in the correct format
+    //Re-use           : in onCreate()
+    //Input Parameters : none
+    //Output Type      : void
+    //
     private void textBoxFocus()
     {
         edtFirstName.setOnFocusChangeListener(new View.OnFocusChangeListener() {
@@ -283,6 +306,13 @@ public class Register extends AppCompatActivity {
         });
     }
 
+    //
+    //Method Name      : void Errorless()
+    //Purpose          : Ensures that no errors are present when the user attempts to register
+    //Re-use           : in onCreate()
+    //Input Parameters : none
+    //Output Type      : Boolean
+    //
     private Boolean Errorless()
     {
         Boolean result = true;

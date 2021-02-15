@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:text="TextView"
+        android:text="@string/dishDetailName"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Type:"
+            android:text="@string/textView15"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -49,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="TextView"
+            android:text="@string/dishDetailType"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Details:"
+            android:text="@string/textView16"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -78,7 +78,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="TextView"
+            android:text="@string/dishDetailAllergens"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
@@ -97,7 +97,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Price:"
+            android:text="@string/textView17"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -107,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:text="TextView"
+            android:text="@string/dishDetailPrice"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
@@ -122,7 +122,7 @@
         android:layout_marginEnd="50dp"
         android:layout_marginRight="50dp"
         android:background="@drawable/buttons"
-        android:text="Back To Menu"
+        android:text="@string/back_to_menu"
         android:textColor="@color/colorPrimaryDark" />
 
 </LinearLayout>

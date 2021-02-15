@@ -62,7 +62,7 @@
         android:focusable="true"
         android:gravity="center_horizontal"
         android:linksClickable="true"
-        android:text="Adding Table..."
+        android:text="@string/adding_table1"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:visibility="gone" />

@@ -125,6 +125,7 @@ public class ReceiptList extends AppCompatActivity implements NavigationView.OnN
     }
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
+
     {
         int id = item.getItemId();
 

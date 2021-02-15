@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Name and Surname:"
+            android:text="@string/textView18"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -39,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text="@string/profileName"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Contact Number:"
+            android:text="@string/textView19"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text="@string/profileNumber"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
@@ -89,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Email::"
+            android:text="@string/textView20"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -99,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="TextView"
+            android:text="@string/profileEmail"
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
     </LinearLayout>
@@ -120,7 +120,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@drawable/buttons"
-            android:text="Return"
+            android:text="@string/profileReturn"
             android:textColor="@color/colorPrimaryDark"
             android:textStyle="bold" />
 
@@ -134,7 +134,7 @@
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="@drawable/buttons"
-            android:text="Deactivate"
+            android:text="@string/profileDeactivate"
             android:textColor="@android:color/holo_red_light"
             android:textStyle="bold" />
     </LinearLayout>

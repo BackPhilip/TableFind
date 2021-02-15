@@ -50,7 +50,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:gravity="center_horizontal|center_vertical"
-                    android:text="N/A"
+                    android:text="@string/receiptInfo"
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="18sp" />
 

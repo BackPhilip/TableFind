@@ -1,7 +1,6 @@
 package com.example.tablefind.activities;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +20,8 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.location.LocationListener;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -40,23 +36,16 @@ import com.backendless.exceptions.BackendlessFault;
 import com.example.tablefind.R;
 import com.example.tablefind.app_utilities.ApplicationClass;
 import com.example.tablefind.app_utilities.RestaurantAdapter;
-import com.example.tablefind.data_models.Reservation;
 import com.example.tablefind.data_models.Restaurant;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 
 import java.io.IOException;
-import java.security.Permissions;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -139,8 +128,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         location.setLongitude(Double.parseDouble(separated[1].trim()));
 
                         Location myLocation = new Location("");
-                        myLocation.setLongitude(addresses.get(0).getLongitude());
-                        myLocation.setLatitude(addresses.get(0).getLatitude());
+                        if (addresses.get(0) != null)
+                        {
+                            myLocation.setLongitude(addresses.get(0).getLongitude());
+                            myLocation.setLatitude(addresses.get(0).getLatitude());
+                        }
 
                         if (onLocationCLose(location, myLocation) == true)
                         {
