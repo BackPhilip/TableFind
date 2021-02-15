@@ -19,6 +19,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+/// <summary>
+/// Shows details of selected menu item.
+/// </summary>
+
 public class MenuItemDetail extends AppCompatActivity {
 
     ImageView menuDetailImage;
@@ -30,6 +34,7 @@ public class MenuItemDetail extends AppCompatActivity {
         setContentView(R.layout.activity_menu_item_detail);
         setTitle("Details");
 
+        /// Initialization vvv ///
         menuDetailImage = findViewById(R.id.menuDetailImage);
 
         dishDetailName = findViewById(R.id.dishDetailName);

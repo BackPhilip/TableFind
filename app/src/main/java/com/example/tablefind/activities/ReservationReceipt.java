@@ -37,6 +37,9 @@ import java.io.FileOutputStream;
 import java.util.List;
 
 import weborb.client.ant.wdm.Table;
+/// <summary>
+/// Creates a receipt with all relevant reservation information.
+/// </summary>
 
 public class ReservationReceipt extends AppCompatActivity {
 
@@ -55,6 +58,7 @@ public class ReservationReceipt extends AppCompatActivity {
         setContentView(R.layout.activity_reservation_receipt);
         setTitle("Details");
 
+        /// Initialization vvv ///
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);

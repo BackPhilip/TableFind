@@ -45,6 +45,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+/// <summary>
+/// Retrieves and displays all restaurant tables.
+/// </summary>
 
 public class TableList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -69,6 +72,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_table_list);
         setTitle("Table List");
 
+        /// Initialization vvv ///
         tableLvList = findViewById(R.id.tableLvList);
         showLocation = findViewById(R.id.showLocation);
         edtDateTime = findViewById(R.id.edtDateTime);

@@ -20,6 +20,9 @@ import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
 import com.example.tablefind.R;
 import com.example.tablefind.app_utilities.ApplicationClass;
+/// <summary>
+/// Shows user profile and allows for deactivation.
+/// </summary>
 
 public class Profile extends AppCompatActivity {
 
@@ -31,6 +34,7 @@ Button profileReturnBtn, profileDeactivateBtn;
         setContentView(R.layout.activity_profile);
         setTitle("My Profile");
 
+        /// Initialization vvv ///
         profileName = findViewById(R.id.profileName);
         profileNumber = findViewById(R.id.profileNumber);
         profileEmail = findViewById(R.id.profileEmail);

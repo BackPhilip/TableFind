@@ -35,6 +35,9 @@ import com.example.tablefind.data_models.Reservation;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
+/// <summary>
+/// Generates a document with a list of all reservations
+/// </summary>
 
 public class ReceiptList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -54,6 +57,7 @@ public class ReceiptList extends AppCompatActivity implements NavigationView.OnN
         setContentView(R.layout.activity_receipt_list);
         setTitle("Reservation List");
 
+        /// Initialization vvv ///
         receiptLvList = findViewById(R.id.receiptLvList);
 
         mLoginFormView = findViewById(R.id.login_form);

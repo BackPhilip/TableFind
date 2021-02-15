@@ -40,6 +40,10 @@ import com.google.firebase.storage.StorageReference;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+/// <summary>
+/// Activity to manage reservations
+/// </summary>
+
 public class NewReservation extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
@@ -61,6 +65,7 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
         setContentView(R.layout.activity_new_reservation);
         setTitle("New Reservation");
 
+        /// Initialization vvv ///
         reservationImage = findViewById(R.id.reservationImage);
 
         reservationSeating = findViewById(R.id.reservationSeating);

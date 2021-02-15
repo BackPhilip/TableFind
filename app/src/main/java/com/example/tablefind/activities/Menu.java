@@ -38,6 +38,10 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
 
+/// <summary>
+/// Activity to view Menu
+/// </summary>
+
 public class Menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     ListView menuLvList;
@@ -57,6 +61,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
         setContentView(R.layout.activity_menu);
         setTitle("Menu");
 
+        /// Initialization vvv ///
         menuLvList = findViewById(R.id.menuLvList);
 
         mLoginFormView = findViewById(R.id.login_form);

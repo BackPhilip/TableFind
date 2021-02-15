@@ -48,6 +48,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+/// <summary>
+/// Main Activity
+/// </summary>
+
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     GridView lvList;
@@ -80,6 +84,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         setTitle("Restaurant List");
 
+        /// Initialization vvv ///
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
@@ -169,6 +174,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, 44);
         }
 
+        //
+        //Name      : onKey for search bar
+        //Purpose          : Filters through restaurant list and displays restaurants that contain search parameters.
+        //
         etSearch.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent event) {
@@ -188,6 +197,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 return true;
             }
         });
+
+        //
+        //Name      : onItemClick for searched restaurants
+        //Purpose          : ***
+        //
 
         lvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -212,6 +226,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    //
+    //Method Name      : void showProgress()
+    //Purpose          : Initialise and instantiate the progress bar and progress text
+    //Re-use           : in OnCreate()
+    //Input Parameters : boolean show
+    //Output Type      : void
+    //
     private void showProgress(final boolean show) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
@@ -249,12 +270,28 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    //
+    //Method Name      : boolean onOptionItemSelected()
+    //Purpose          : Passes the selected item.
+    //Re-use           :
+    //Input Parameters : MenuItem item
+    //Output Type      : boolean
+    //
+
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mToggle.onOptionsItemSelected(item)) {
             return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
+    //
+    //Method Name      : boolean onNavigationItemSelected()
+    //Purpose          : implements the selected navigation function.
+    //Re-use           : exitByBackKey()
+    //Input Parameters : MenuItem item
+    //Output Type      : boolean
+    //
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
@@ -275,6 +312,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return false;
     }
 
+    //
+    //Method Name      : boolean onKeyDown()
+    //Purpose          : functionality for the back key.
+    //Re-use           : exitByBackKey()
+    //Input Parameters : int, KeyEvent
+    //Output Type      : boolean
+    //
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
@@ -282,6 +327,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         return super.onKeyDown(keyCode, event);
     }
+
+    //
+    //Method Name      : void exitByBackKey()
+    //Purpose          : ***
+    //Re-use           : none
+    //Input Parameters : none
+    //Output Type      : void
+    //
 
     protected void exitByBackKey() {
 
@@ -310,7 +363,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
-    public Boolean onLocationCLose(Location myLocation, Location location) {
+    //
+    //Method Name      : boolean onLocationClose()
+    //Purpose          : Tests for proximity conditions between two locations.
+    //Re-use           : distance()
+    // Input Parameters : Location, Location
+    //Output Type      : boolean
+    //
+
+    public boolean onLocationCLose(Location myLocation, Location location) {
 
         double lat2;
         double lng2;
@@ -332,6 +393,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     }
 
     @SuppressLint("MissingPermission")
+    //
+    //Method Name      : void getLocation()
+    //Purpose          : Checks for device location.
+    //Re-use           : none
+    // Input Parameters : none
+    //Output Type      : void
+    //
     private void getLocation()
     {
         fusedLocationProviderClient.getLastLocation().addOnCompleteListener(new OnCompleteListener<Location>() {
@@ -354,6 +422,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
+
+    //
+    //Method Name      : double distance()
+    //Purpose          : Calculates the distance between two locations.
+    //Re-use           : none
+    // Input Parameters : double, double, double, double
+    //Output Type      : double
+    //
 
     private double distance(double lat1, double lng1, double lat2, double lng2) {
 
