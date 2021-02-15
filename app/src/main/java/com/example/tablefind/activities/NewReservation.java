@@ -133,6 +133,14 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
         });
     }
 
+    //
+    //Method Name      : boolean onOptionItemSelected()
+    //Purpose          : Passes the selected item.
+    //Re-use           :
+    //Input Parameters : MenuItem
+    //Output Type      : boolean
+    //
+
     public boolean onOptionsItemSelected(MenuItem item)
     {
         if (mToggle.onOptionsItemSelected(item))
@@ -141,6 +149,14 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
         }
         return super.onOptionsItemSelected(item);
     }
+
+    //
+    //Method Name      : boolean onNavigationItemSelected()
+    //Purpose          : implements the selected navigation function.
+    //Re-use           : none
+    //Input Parameters : MenuItem
+    //Output Type      : boolean
+    //
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
@@ -186,6 +202,13 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    //
+    //Method Name      : void showProgress()
+    //Purpose          : Initialise and instantiate the progress bar and progress text
+    //Re-use           : in OnCreate()
+    //Input Parameters : boolean
+    //Output Type      : void
+    //
     private void showProgress(final boolean show) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
@@ -223,6 +246,13 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
         }
     }
 
+    //
+    //Method Name      : void Reserve()
+    //Purpose          : method to create a reservation.
+    //Re-use           : showProgress()
+    //Input Parameters : none
+    //Output Type      : void
+    //
     public void Reserve()
     {
         if (!(edtDuration.getText().toString().equals("1") || edtDuration.getText().toString().equals("2") || edtDuration.getText().toString().equals("3")))
@@ -274,6 +304,14 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
         }
     }
 
+    //
+    //Method Name      : boolean onKeyDown()
+    //Purpose          : functionality for the back key.
+    //Re-use           : exitByBackKey()
+    //Input Parameters : int, KeyEvent
+    //Output Type      : boolean
+    //
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
@@ -281,7 +319,13 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
         }
         return super.onKeyDown(keyCode, event);
     }
-
+    //
+    //Method Name      : void exitByBackKey()
+    //Purpose          : ***
+    //Re-use           : none
+    //Input Parameters : none
+    //Output Type      : void
+    //
     protected void exitByBackKey() {
         Intent intent = new Intent(NewReservation.this, TableList.class);
         startActivity(intent);

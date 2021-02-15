@@ -46,6 +46,11 @@ Button profileReturnBtn, profileDeactivateBtn;
         profileNumber.setText(ApplicationClass.user.getProperty("Cellphone").toString());
         profileEmail.setText(ApplicationClass.user.getEmail());
 
+        //
+        //Name      : onClick for return button
+        //Purpose   : Returns user to the main activity.
+        //
+
         profileReturnBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,6 +59,11 @@ Button profileReturnBtn, profileDeactivateBtn;
                 Profile.this.finish();
             }
         });
+
+        //
+        //Name      : onClick for Profile Deactivation
+        //Purpose   : Deactivates a user profile.
+        //
 
         profileDeactivateBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -274,7 +274,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //Method Name      : boolean onOptionItemSelected()
     //Purpose          : Passes the selected item.
     //Re-use           :
-    //Input Parameters : MenuItem item
+    //Input Parameters : MenuItem
     //Output Type      : boolean
     //
 
