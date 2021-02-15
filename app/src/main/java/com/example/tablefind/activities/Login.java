@@ -12,7 +12,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,14 +23,9 @@ import com.backendless.Backendless;
 import com.backendless.BackendlessUser;
 import com.backendless.async.callback.AsyncCallback;
 import com.backendless.exceptions.BackendlessFault;
-import com.backendless.persistence.DataQueryBuilder;
 import com.backendless.persistence.local.UserIdStorageFactory;
 import com.example.tablefind.R;
 import com.example.tablefind.app_utilities.ApplicationClass;
-import com.example.tablefind.data_models.Reservation;
-import com.example.tablefind.data_models.RestaurantTable;
-
-import java.util.List;
 
 public class Login extends AppCompatActivity {
     private View mProgressView;

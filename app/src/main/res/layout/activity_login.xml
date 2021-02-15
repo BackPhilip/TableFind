@@ -19,7 +19,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="200dp"
         android:outlineAmbientShadowColor="@color/colorBackground"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:targetApi="p" />
 
     <TextView
         android:id="@+id/tvLoad"
@@ -29,7 +30,7 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center_horizontal"
-        android:text="Loading...please wait..."
+        android:text="@string/loading_please_wait"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:visibility="gone" />

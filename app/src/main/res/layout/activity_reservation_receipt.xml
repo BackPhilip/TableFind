@@ -16,7 +16,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="200dp"
         android:outlineAmbientShadowColor="@color/colorBackground"
-        android:visibility="gone" />
+        android:visibility="gone"
+        tools:targetApi="p" />
 
     <TextView
         android:id="@+id/tvLoad"
@@ -26,7 +27,7 @@
         android:clickable="true"
         android:focusable="true"
         android:gravity="center_horizontal"
-        android:text="Loading...please wait..."
+        android:text="@string/loading_please_wait2"
         android:textColor="@color/colorPrimary"
         android:textStyle="bold"
         android:visibility="gone" />
@@ -43,7 +44,7 @@
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User:"
+            android:text="@string/textView2"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -63,7 +64,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:scrollbarThumbHorizontal="@color/colorPrimary"
-                android:text="Name:"
+                android:text="@string/textView3"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -74,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:scrollbarThumbHorizontal="@color/colorPrimary"
-                android:text="N/A"
+                android:text="@string/receiptUser"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -94,7 +95,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:scrollbarThumbHorizontal="@color/colorPrimary"
-                android:text="Contact Number:"
+                android:text="@string/textView4"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -105,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:scrollbarThumbHorizontal="@color/colorPrimary"
-                android:text="N/A"
+                android:text="@string/receiptUserNumber"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -125,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
                 android:scrollbarThumbHorizontal="@color/colorPrimary"
-                android:text="Email:"
+                android:text="@string/textView5"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -136,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:scrollbarThumbHorizontal="@color/colorPrimary"
-                android:text="N/A"
+                android:text="@string/receiptUserEmail"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -146,7 +147,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Restaurant:"
+            android:text="@string/textView6"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -165,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
-                android:text="Name:"
+                android:text="@string/textView7"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -175,7 +176,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:text="N/A"
+                android:text="@string/receiptRestaurantName"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -194,7 +195,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:text="Location:"
+                android:text="@string/textView8"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -205,10 +206,11 @@
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:clickable="true"
-                android:text="N/A"
+                android:text="@string/receiptRestaurantLocation"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold|italic"
+                android:focusable="true" />
         </LinearLayout>
 
         <LinearLayout
@@ -225,7 +227,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:text="Contact Number:"
+                android:text="@string/textView9"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -235,7 +237,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="N/A"
+                android:text="@string/receiptRestaurantNumber"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -245,7 +247,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Reservation:"
+            android:text="@string/textView10"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -264,7 +266,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:text="From:"
+                android:text="@string/textView11"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -274,7 +276,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="N/A"
+                android:text="@string/receiptReservationFrom"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -293,7 +295,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:text="To:"
+                android:text="@string/textView12"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp"
                 android:textStyle="bold" />
@@ -303,7 +305,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="N/A"
+                android:text="@string/receiptReservationTo"
                 android:textColor="@color/colorPrimary"
                 android:textSize="16sp" />
         </LinearLayout>
@@ -322,7 +324,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:text="Capacity:"
+                android:text="@string/textView13"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold" />
 
@@ -331,7 +333,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="N/A"
+                android:text="@string/receiptReservationCapacity"
                 android:textColor="@color/colorPrimary" />
         </LinearLayout>
 
@@ -349,7 +351,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:text="Table Info:"
+                android:text="@string/textView14"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold" />
 
@@ -358,7 +360,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="N/A"
+                android:text="@string/receiptReservationTableInfo"
                 android:textColor="@color/colorPrimary" />
 
         </LinearLayout>
@@ -373,7 +375,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/buttons"
-            android:text="Accept"
+            android:text="@string/receiptAcceptBtn"
             android:textColor="@color/colorPrimaryDark" />
 
         <Button
@@ -386,7 +388,7 @@
             android:layout_marginEnd="30dp"
             android:layout_marginRight="30dp"
             android:background="@drawable/buttons"
-            android:text="Export all as PDF"
+            android:text="@string/export_all_as_pdf"
             android:textColor="@color/colorPrimaryDark" />
 
     </LinearLayout>
