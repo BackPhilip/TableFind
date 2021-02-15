@@ -231,7 +231,7 @@ public class Login extends AppCompatActivity {
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
 
     //
     //Method Name      : void onStart()
@@ -276,7 +276,7 @@ public class Login extends AppCompatActivity {
                     {
                         showProgress(false);
                     }
-                }
+                }//end method
 
                 @Override
                 public void handleFault(BackendlessFault fault) {

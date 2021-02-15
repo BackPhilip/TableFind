@@ -170,7 +170,7 @@ public class ReservationReceipt extends AppCompatActivity {
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }//end method
 
     //
     //Method Name      : void exitByBackKey()
@@ -194,7 +194,7 @@ public class ReservationReceipt extends AppCompatActivity {
 
             }
         }).setIcon(R.drawable.exit).show();
-    }
+    }//end method
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
 
@@ -241,7 +241,7 @@ public class ReservationReceipt extends AppCompatActivity {
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     //
@@ -325,5 +325,5 @@ public class ReservationReceipt extends AppCompatActivity {
             ApplicationClass.showToast("Error: " + e.getMessage(), 2, ReservationReceipt.this);
         }
         myPdfDocument.close();
-    }
+    }//end method
 }

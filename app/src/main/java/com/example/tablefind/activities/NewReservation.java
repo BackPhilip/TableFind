@@ -148,7 +148,7 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }//end method
 
     //
     //Method Name      : boolean onNavigationItemSelected()
@@ -199,7 +199,7 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
             NewReservation.this.finish();
         }
         return false;
-    }
+    }//end method
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     //
@@ -244,7 +244,7 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
 
     //
     //Method Name      : void Reserve()
@@ -302,7 +302,7 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
                 }
             }).setIcon(R.drawable.add).show();
         }
-    }
+    }//end method
 
     //
     //Method Name      : boolean onKeyDown()
@@ -318,7 +318,7 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }//end method
     //
     //Method Name      : void exitByBackKey()
     //Purpose          : ***
@@ -330,5 +330,5 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
         Intent intent = new Intent(NewReservation.this, TableList.class);
         startActivity(intent);
         NewReservation.this.finish();
-    }
+    }//end method
 }

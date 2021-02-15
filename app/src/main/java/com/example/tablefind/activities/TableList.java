@@ -211,7 +211,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
 
     //
     //Method Name      : void showDateTimeDialog()
@@ -274,7 +274,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         };
 
         new DatePickerDialog(TableList.this, R.style.TimePickerTheme, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
-    }
+    }//end method
 
     //
     //Method Name      : void TimeFilter()
@@ -330,7 +330,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
                     showProgress(false);
                 }
             });
-    }
+    }//end method
 
     //
     //Method Name      : boolean onOptionItemSelected()
@@ -347,7 +347,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }//end method
 
     //
     //Method Name      : boolean onNavigationItemSelected()
@@ -399,7 +399,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
             TableList.this.finish();
         }
         return false;
-    }
+    }//end method
 
     //
     //Method Name      : boolean onKeyDown()
@@ -415,7 +415,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }//end method
 
     //
     //Method Name      : void exitByBackKey()
@@ -429,5 +429,5 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         Intent intent = new Intent(TableList.this, MainActivity.class);
         startActivity(intent);
         TableList.this.finish();
-    }
+    }//end method
 }

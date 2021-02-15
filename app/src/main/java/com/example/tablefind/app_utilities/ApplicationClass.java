@@ -57,6 +57,14 @@ public class ApplicationClass extends Application
         Backendless.initApp( getApplicationContext(), APPLICATION_ID, API_KEY );
     }
 
+    //
+    //Method Name      : String EmailValidation()
+    //Purpose          : Checks email entry for validity.
+    //Re-use           : none
+    //Input Parameters : String
+    //Output Type      : String
+    //
+
     public static String EmailValidation( String email)
     {
         String message=" ";
@@ -77,6 +85,13 @@ public class ApplicationClass extends Application
         return message;
     }//end method
 
+    //
+    //Method Name      : String PasswordValidation()
+    //Purpose          : Checks first password entry for validity.
+    //Re-use           : none
+    //Input Parameters : String
+    //Output Type      : String
+    //
 
     public static String PasswordValidation(String password)
     {
@@ -96,6 +111,14 @@ public class ApplicationClass extends Application
         return message;
     }//end method
 
+    //
+    //Method Name      : String PasswordValidation()
+    //Purpose          : Checks both password entries for validity and uniformity.
+    //Re-use           : none
+    //Input Parameters : String, String
+    //Output Type      : String
+    //
+
     public static String PasswordValidation(String password1,String password2)
     {
         String message;
@@ -109,6 +132,14 @@ public class ApplicationClass extends Application
         }
         return  message;
     }
+
+    //
+    //Method Name      : String PhoneNumberValidation()
+    //Purpose          : Checks phone number entrie for validity.
+    //Re-use           : none
+    //Input Parameters : String
+    //Output Type      : String
+    //
 
     public static String PhoneNumberValidation(String phoneNumber)
     {

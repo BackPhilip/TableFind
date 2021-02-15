@@ -132,7 +132,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }//end method
 
     //
     //Method Name      : boolean onNavigationItemSelected()
@@ -184,7 +184,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             Menu.this.finish();
         }
         return false;
-    }
+    }//end method
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
     //
     //Method Name      : void showProgress()
@@ -229,7 +229,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
 
     //
     //Method Name      : boolean onKeyDown()
@@ -245,7 +245,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }//end method
 
     //
     //Method Name      : void exitByBackKey()
@@ -259,5 +259,5 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
         Intent intent = new Intent(Menu.this, TableList.class);
         startActivity(intent);
         Menu.this.finish();
-    }
+    }//end method
 }

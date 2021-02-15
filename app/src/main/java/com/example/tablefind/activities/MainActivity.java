@@ -268,7 +268,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
 
     //
     //Method Name      : boolean onOptionItemSelected()
@@ -283,7 +283,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }//end method
 
     //
     //Method Name      : boolean onNavigationItemSelected()
@@ -310,7 +310,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             MainActivity.this.finish();
         }
         return false;
-    }
+    }//end method
 
     //
     //Method Name      : boolean onKeyDown()
@@ -326,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }//end method
 
     //
     //Method Name      : void exitByBackKey()
@@ -361,7 +361,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         }).setIcon(R.drawable.exit).show();
 
-    }
+    }//end method
 
     //
     //Method Name      : boolean onLocationClose()
@@ -390,7 +390,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             return false;
         }
-    }
+    }//end method
 
     @SuppressLint("MissingPermission")
     //
@@ -421,7 +421,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
             }
         });
-    }
+    }//end method
 
     //
     //Method Name      : double distance()
@@ -449,5 +449,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         double dist = earthRadius * c;
 
         return dist;
-    }
+    }//end method
 }
