@@ -45,6 +45,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+/// <summary>
+/// Retrieves and displays all restaurant tables.
+/// </summary>
 
 public class TableList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -69,6 +72,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.activity_table_list);
         setTitle("Table List");
 
+        /// Initialization vvv ///
         tableLvList = findViewById(R.id.tableLvList);
         showLocation = findViewById(R.id.showLocation);
         edtDateTime = findViewById(R.id.edtDateTime);
@@ -102,7 +106,13 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         Backendless.Persistence.of(RestaurantTable.class).find(queryBuilder, new AsyncCallback<List<RestaurantTable>>() {
             @Override
             public void handleResponse(List<RestaurantTable> response) {
-                ApplicationClass.tables.addAll(response);
+                for (RestaurantTable table : response)
+                {
+                    if (table.isAvailable())
+                    {
+                        ApplicationClass.tables.add(table);
+                    }
+                }
                 for (RestaurantTable table : ApplicationClass.tables)
                 {
                     table.setAvailable(true);
@@ -163,6 +173,15 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+
+    //
+    //Method Name      : void showProgress()
+    //Purpose          : Initialise and instantiate the progress bar and progress text
+    //Re-use           : in OnCreate()
+    //Input Parameters : boolean
+    //Output Type      : void
+    //
+
     private void showProgress(final boolean show) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
@@ -198,7 +217,15 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
+
+    //
+    //Method Name      : void showDateTimeDialog()
+    //Purpose          : Displays dialogue box for user to select date and time.
+    //Re-use           : none
+    //Input Parameters : Button
+    //Output Type      : void
+    //
 
     private void showDateTimeDialog(final Button edtDateTime) {
         final DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
@@ -253,7 +280,15 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         };
 
         new DatePickerDialog(TableList.this, R.style.TimePickerTheme, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
-    }
+    }//end method
+
+    //
+    //Method Name      : void TimeFilter()
+    //Purpose          : Shows available tables for selected time frame.
+    //Re-use           : showProgress()
+    //Input Parameters : Date
+    //Output Type      : void
+    //
 
     private void TimeFilter(final Date requiredDate)
     {
@@ -301,7 +336,15 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
                     showProgress(false);
                 }
             });
-    }
+    }//end method
+
+    //
+    //Method Name      : boolean onOptionItemSelected()
+    //Purpose          : Passes the selected item.
+    //Re-use           :
+    //Input Parameters : MenuItem
+    //Output Type      : boolean
+    //
 
     public boolean onOptionsItemSelected(MenuItem item)
     {
@@ -310,7 +353,15 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }//end method
+
+    //
+    //Method Name      : boolean onNavigationItemSelected()
+    //Purpose          : implements the selected navigation function.
+    //Re-use           : none
+    //Input Parameters : MenuItem
+    //Output Type      : boolean
+    //
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
@@ -354,18 +405,35 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
             TableList.this.finish();
         }
         return false;
-    }
+    }//end method
+
+    //
+    //Method Name      : boolean onKeyDown()
+    //Purpose          : functionality for the back key.
+    //Re-use           : exitByBackKey()
+    //Input Parameters : int, KeyEvent
+    //Output Type      : boolean
+    //
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }//end method
+
+    //
+    //Method Name      : void exitByBackKey()
+    //Purpose          : logic that is executed when the back key is hit
+    //Re-use           : none
+    //Input Parameters : none
+    //Output Type      : void
+    //
 
     protected void exitByBackKey() {
         Intent intent = new Intent(TableList.this, MainActivity.class);
         startActivity(intent);
         TableList.this.finish();
-    }
+    }//end method
 }

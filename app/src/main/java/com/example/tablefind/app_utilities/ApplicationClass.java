@@ -57,6 +57,14 @@ public class ApplicationClass extends Application
         Backendless.initApp( getApplicationContext(), APPLICATION_ID, API_KEY );
     }
 
+    //
+    //Method Name      : String EmailValidation()
+    //Purpose          : Checks email entry for validity.
+    //Re-use           : none
+    //Input Parameters : String
+    //Output Type      : String
+    //
+
     public static String EmailValidation( String email)
     {
         String message=" ";
@@ -77,6 +85,14 @@ public class ApplicationClass extends Application
         return message;
     }//end method
 
+    //
+    //Method Name      : String PasswordValidation()
+    //Purpose          : Checks first password entry for validity.
+    //Re-use           : none
+    //Input Parameters : String
+    //Output Type      : String
+
+    //
 
     public static String PasswordValidation(String password)
     {
@@ -96,6 +112,14 @@ public class ApplicationClass extends Application
         return message;
     }//end method
 
+    //
+    //Method Name      : String PasswordValidation()
+    //Purpose          : Checks both password entries for validity and uniformity.
+    //Re-use           : none
+    //Input Parameters : String, String
+    //Output Type      : String
+    //
+
     public static String PasswordValidation(String password1,String password2)
     {
         String message;
@@ -109,6 +133,14 @@ public class ApplicationClass extends Application
         }
         return  message;
     }
+
+    //
+    //Method Name      : String PhoneNumberValidation()
+    //Purpose          : Checks phone number entry for validity.
+    //Re-use           : none
+    //Input Parameters : String
+    //Output Type      : String
+    //
 
     public static String PhoneNumberValidation(String phoneNumber)
     {
@@ -127,6 +159,14 @@ public class ApplicationClass extends Application
         }
         return message;
     }//end method
+
+    //
+    //Method Name      : void showToast()
+    //Purpose          : Sends a custom toast to the user
+    //Re-use           : all activities
+    //Input Parameters : String
+    //Output Type      : Toast
+    //
     public static void showToast(String message, int type, Activity context) {
         //info toasts
         View toastView = context.getLayoutInflater().inflate(R.layout.toast, (ViewGroup) context.findViewById((R.id.linlay)));
@@ -144,7 +184,13 @@ public class ApplicationClass extends Application
         toast.show();
     }
 
-
+    //
+    //Method Name      : Bitmap getRoundedCornerBitmap()
+    //Purpose          : rounds the corners for images.
+    //Re-use           : all activities
+    //Input Parameters : Bitmap, int
+    //Output Type      : Bitmap
+    //
     public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
         Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
                 .getHeight(), Bitmap.Config.ARGB_8888);

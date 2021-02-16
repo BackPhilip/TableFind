@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -19,6 +20,10 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
+/// <summary>
+/// Shows details of selected menu item.
+/// </summary>
+
 public class MenuItemDetail extends AppCompatActivity {
 
     ImageView menuDetailImage;
@@ -30,6 +35,7 @@ public class MenuItemDetail extends AppCompatActivity {
         setContentView(R.layout.activity_menu_item_detail);
         setTitle("Details");
 
+        /// Initialization vvv ///
         menuDetailImage = findViewById(R.id.menuDetailImage);
 
         dishDetailName = findViewById(R.id.dishDetailName);
@@ -67,4 +73,32 @@ public class MenuItemDetail extends AppCompatActivity {
             }
         });
     }
+
+    //
+    //Method Name      : boolean onKeyDown()
+    //Purpose          : functionality for the back key.
+    //Re-use           : exitByBackKey()
+    //Input Parameters : int, KeyEvent
+    //Output Type      : boolean
+    //
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            exitByBackKey();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }//end method
+
+    //
+    //Method Name      : void exitByBackKey()
+    //Purpose          : ***
+    //Re-use           : none
+    //Input Parameters : none
+    //Output Type      : void
+    //
+    protected void exitByBackKey() {
+        Intent intent = new Intent(MenuItemDetail.this, Menu.class);
+        startActivity(intent);
+        MenuItemDetail.this.finish();
+    }//end method
 }

@@ -37,6 +37,9 @@ import java.io.FileOutputStream;
 import java.util.List;
 
 import weborb.client.ant.wdm.Table;
+/// <summary>
+/// Creates a receipt with all relevant reservation information.
+/// </summary>
 
 public class ReservationReceipt extends AppCompatActivity {
 
@@ -55,6 +58,7 @@ public class ReservationReceipt extends AppCompatActivity {
         setContentView(R.layout.activity_reservation_receipt);
         setTitle("Details");
 
+        /// Initialization vvv ///
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
@@ -152,13 +156,29 @@ public class ReservationReceipt extends AppCompatActivity {
         });
     }
 
+    //
+    //Method Name      : boolean onKeyDown()
+    //Purpose          : functionality for the back key.
+    //Re-use           : exitByBackKey()
+    //Input Parameters : int, KeyEvent
+    //Output Type      : boolean
+    //
+
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             exitByBackKey();
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }//end method
+
+    //
+    //Method Name      : void exitByBackKey()
+    //Purpose          : ***
+    //Re-use           : none
+    //Input Parameters : none
+    //Output Type      : void
+    //
 
     protected void exitByBackKey() {
         new AlertDialog.Builder(new ContextThemeWrapper(this, R.style.TimePickerTheme)).setTitle("Any Issues?").setMessage("If you wish to cancel the reservation or make any changes in general, please contact the restaurant.").setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
@@ -174,9 +194,18 @@ public class ReservationReceipt extends AppCompatActivity {
 
             }
         }).setIcon(R.drawable.exit).show();
-    }
+    }//end method
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+
+    //
+    //Method Name      : void showProgress()
+    //Purpose          : Initialise and instantiate the progress bar and progress text
+    //Re-use           : in OnCreate()
+    //Input Parameters : boolean
+    //Output Type      : void
+    //
+
     private void showProgress(final boolean show) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
@@ -212,9 +241,16 @@ public class ReservationReceipt extends AppCompatActivity {
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    //
+    //Method Name      : void exportAsPdf()
+    //Purpose          : Exports a pdf document with reservation information.
+    //Re-use           : none
+    //Input Parameters : none
+    //Output Type      : void
+    //
     private void exportAsPdf()
     {
         PdfDocument myPdfDocument = new PdfDocument();
@@ -289,5 +325,5 @@ public class ReservationReceipt extends AppCompatActivity {
             ApplicationClass.showToast("Error: " + e.getMessage(), 2, ReservationReceipt.this);
         }
         myPdfDocument.close();
-    }
+    }//end method
 }

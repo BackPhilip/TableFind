@@ -27,6 +27,10 @@ import com.backendless.persistence.local.UserIdStorageFactory;
 import com.example.tablefind.R;
 import com.example.tablefind.app_utilities.ApplicationClass;
 
+/// <summary>
+/// Activity to Log in to application.
+/// </summary>
+
 public class Login extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
@@ -45,6 +49,7 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         setTitle("Login");
 
+        /// Initialization vvv ///
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
         tvLoad = findViewById(R.id.tvLoad);
@@ -55,6 +60,11 @@ public class Login extends AppCompatActivity {
         btnRegister = findViewById(R.id.btnRegister);
         tvReset = findViewById(R.id.tvReset);
         keepMeLoggedIn = findViewById(R.id.keepMeLoggedIn);
+
+        //
+        //Name      : onClick for Login button
+        //Purpose          : Checks if required fields are correct and if the account is active, then logs in user.
+        //
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,6 +82,7 @@ public class Login extends AppCompatActivity {
                     tvLoad.setText("Logging In...");
 
                     Backendless.UserService.login(email, password, new AsyncCallback<BackendlessUser>() {
+
                         @Override
                         public void handleResponse(BackendlessUser response) {
 
@@ -110,6 +121,7 @@ public class Login extends AppCompatActivity {
                                 showProgress(false);
                             }
                         }
+
                         @Override
                         public void handleFault(BackendlessFault fault) {
                             if (fault.getMessage().equals("User cannot login - account is disabled"))
@@ -129,12 +141,18 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        //
+        //Name      : onClick for Register button
+        //Purpose          : Checks if required fields are not empty and registers user.
+        //
+
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Login.this, Register.class));
             }
         });
+
 
         tvReset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,6 +187,15 @@ public class Login extends AppCompatActivity {
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+
+    //
+    //Method Name      : void showProgress()
+    //Purpose          : Initialise and instantiate the progress bar and progress text
+    //Re-use           : in OnCreate()
+    //Input Parameters : boolean show
+    //Output Type      : void
+    //
+
     private void showProgress(final boolean show) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
@@ -204,7 +231,15 @@ public class Login extends AppCompatActivity {
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
+
+    //
+    //Method Name      : void onStart()
+    //Purpose          : loads user information and displays welcome to user.
+    //Re-use           : showProgress()
+    //Input Parameters : none
+    //Output Type      : void
+    //
     @Override
     protected void onStart() {
         super.onStart();
@@ -241,7 +276,7 @@ public class Login extends AppCompatActivity {
                     {
                         showProgress(false);
                     }
-                }
+                }//end method
 
                 @Override
                 public void handleFault(BackendlessFault fault) {

@@ -177,7 +177,7 @@ public class Register extends AppCompatActivity {
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
 
     //
     //Method Name      : void textBoxFocus()
@@ -304,7 +304,7 @@ public class Register extends AppCompatActivity {
                 }
             }
         });
-    }
+    }//end method
 
     //
     //Method Name      : void Errorless()
@@ -329,5 +329,5 @@ public class Register extends AppCompatActivity {
                 error6 != null || error7 != null)
             result=false;
         return result;
-    }
+    }//end method
 }

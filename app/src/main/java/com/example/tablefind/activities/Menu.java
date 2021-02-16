@@ -38,6 +38,10 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.List;
 
+/// <summary>
+/// Activity to view Menu
+/// </summary>
+
 public class Menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     ListView menuLvList;
@@ -57,6 +61,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
         setContentView(R.layout.activity_menu);
         setTitle("Menu");
 
+        /// Initialization vvv ///
         menuLvList = findViewById(R.id.menuLvList);
 
         mLoginFormView = findViewById(R.id.login_form);
@@ -97,6 +102,10 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
+        //
+        //Name      : onItemClick for Menu Selection
+        //Purpose   : Opens menu item details.
+        //
         menuLvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -108,6 +117,14 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
         });
     }
 
+    //
+    //Method Name      : boolean onOptionItemSelected()
+    //Purpose          : Passes the selected item.
+    //Re-use           :
+    //Input Parameters : MenuItem
+    //Output Type      : boolean
+    //
+
     public boolean onOptionsItemSelected(MenuItem item)
     {
         if (mToggle.onOptionsItemSelected(item))
@@ -115,7 +132,15 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             return true;
         }
         return super.onOptionsItemSelected(item);
-    }
+    }//end method
+
+    //
+    //Method Name      : boolean onNavigationItemSelected()
+    //Purpose          : implements the selected navigation function.
+    //Re-use           : none
+    //Input Parameters : MenuItem
+    //Output Type      : boolean
+    //
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item)
     {
@@ -159,8 +184,16 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             Menu.this.finish();
         }
         return false;
-    }
+    }//end method
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR2)
+    //
+    //Method Name      : void showProgress()
+    //Purpose          : Initialise and instantiate the progress bar and progress text
+    //Re-use           : in OnCreate()
+    //Input Parameters : boolean
+    //Output Type      : void
+    //
+
     private void showProgress(final boolean show) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB_MR2) {
             int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
@@ -196,7 +229,15 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             tvLoad.setVisibility(show ? View.VISIBLE : View.GONE);
             mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
         }
-    }
+    }//end method
+
+    //
+    //Method Name      : boolean onKeyDown()
+    //Purpose          : functionality for the back key.
+    //Re-use           : exitByBackKey()
+    //Input Parameters : int, KeyEvent
+    //Output Type      : boolean
+    //
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
@@ -204,11 +245,19 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
             return true;
         }
         return super.onKeyDown(keyCode, event);
-    }
+    }//end method
+
+    //
+    //Method Name      : void exitByBackKey()
+    //Purpose          : ***
+    //Re-use           : none
+    //Input Parameters : none
+    //Output Type      : void
+    //
 
     protected void exitByBackKey() {
         Intent intent = new Intent(Menu.this, TableList.class);
         startActivity(intent);
         Menu.this.finish();
-    }
+    }//end method
 }
