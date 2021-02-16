@@ -159,6 +159,14 @@ public class ApplicationClass extends Application
         }
         return message;
     }//end method
+
+    //
+    //Method Name      : void showToast()
+    //Purpose          : Sends a custom toast to the user
+    //Re-use           : all activities
+    //Input Parameters : String
+    //Output Type      : Toast
+    //
     public static void showToast(String message, int type, Activity context) {
         //info toasts
         View toastView = context.getLayoutInflater().inflate(R.layout.toast, (ViewGroup) context.findViewById((R.id.linlay)));
@@ -176,7 +184,13 @@ public class ApplicationClass extends Application
         toast.show();
     }
 
-
+    //
+    //Method Name      : Bitmap getRoundedCornerBitmap()
+    //Purpose          : rounds the corners for images.
+    //Re-use           : all activities
+    //Input Parameters : Bitmap, int
+    //Output Type      : Bitmap
+    //
     public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
         Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
                 .getHeight(), Bitmap.Config.ARGB_8888);

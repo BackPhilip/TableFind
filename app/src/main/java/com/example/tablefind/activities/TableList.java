@@ -106,7 +106,13 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         Backendless.Persistence.of(RestaurantTable.class).find(queryBuilder, new AsyncCallback<List<RestaurantTable>>() {
             @Override
             public void handleResponse(List<RestaurantTable> response) {
-                ApplicationClass.tables.addAll(response);
+                for (RestaurantTable table : response)
+                {
+                    if (table.isAvailable())
+                    {
+                        ApplicationClass.tables.add(table);
+                    }
+                }
                 for (RestaurantTable table : ApplicationClass.tables)
                 {
                     table.setAvailable(true);
@@ -215,7 +221,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
 
     //
     //Method Name      : void showDateTimeDialog()
-    //Purpose          : Displays the selected date and time to the user for confirmation.
+    //Purpose          : Displays dialogue box for user to select date and time.
     //Re-use           : none
     //Input Parameters : Button
     //Output Type      : void
@@ -419,7 +425,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
 
     //
     //Method Name      : void exitByBackKey()
-    //Purpose          : ***
+    //Purpose          : logic that is executed when the back key is hit
     //Re-use           : none
     //Input Parameters : none
     //Output Type      : void

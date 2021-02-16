@@ -30,7 +30,6 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/tablefind_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity android:name="com.example.tablefind.activities.ReceiptList" />
         <activity android:name="com.example.tablefind.activities.Profile" />

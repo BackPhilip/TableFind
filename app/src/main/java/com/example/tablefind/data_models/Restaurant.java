@@ -13,6 +13,7 @@ public class Restaurant
     private int maxCapacity;
     private Date open;
     private Date close;
+    private Boolean active;
 
     public Restaurant() { }
 
@@ -80,4 +81,8 @@ public class Restaurant
     public Date getClose() { return close; }
 
     public void setClose(Date close) { this.close = close; }
+
+    public Boolean getActive() { return active; }
+
+    public void setActive(Boolean active) { this.active = active; }
 }

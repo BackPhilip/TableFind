@@ -120,8 +120,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 @Override
                 public void handleResponse(List<Restaurant> response) {
 
-                    ApplicationClass.restaurants.addAll(response);
-                    allRestaurants = response;
+                    for (Restaurant restaurant : response)
+                    {
+                        if (restaurant.getActive())
+                        {
+                            ApplicationClass.restaurants.add(restaurant);
+                        }
+                    }
+                    allRestaurants = ApplicationClass.restaurants;
                     adapter = new RestaurantAdapter(MainActivity.this, response);
                     lvList.setAdapter(adapter);
                     Location location = new Location("");
@@ -200,7 +206,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //
         //Name      : onItemClick for searched restaurants
-        //Purpose          : ***
+        //Purpose          : sets selected restaurant in Application Class and moves on to TableList activity
         //
 
         lvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -273,7 +279,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //
     //Method Name      : boolean onOptionItemSelected()
     //Purpose          : Passes the selected item.
-    //Re-use           :
+    //Re-use           : N/A
     //Input Parameters : MenuItem
     //Output Type      : boolean
     //
@@ -330,7 +336,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     //
     //Method Name      : void exitByBackKey()
-    //Purpose          : ***
+    //Purpose          : Logic that is executed when the back key is tapped
     //Re-use           : none
     //Input Parameters : none
     //Output Type      : void
