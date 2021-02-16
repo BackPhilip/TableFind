@@ -91,7 +91,7 @@ public class MenuItemDetail extends AppCompatActivity {
 
     //
     //Method Name      : void exitByBackKey()
-    //Purpose          : ***
+    //Purpose          : Logic that is executed when the back key is tapped
     //Re-use           : none
     //Input Parameters : none
     //Output Type      : void

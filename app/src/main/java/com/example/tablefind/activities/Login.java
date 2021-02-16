@@ -63,7 +63,7 @@ public class Login extends AppCompatActivity {
 
         //
         //Name      : onClick for Login button
-        //Purpose          : Checks if required fields are correct and if the account is active, then logs in user.
+        //Purpose   : Checks if required fields are correct and if the account is active, then logs in user.
         //
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -143,7 +143,7 @@ public class Login extends AppCompatActivity {
 
         //
         //Name      : onClick for Register button
-        //Purpose          : Checks if required fields are not empty and registers user.
+        //Purpose   : Checks if required fields are not empty and registers user.
         //
 
         btnRegister.setOnClickListener(new View.OnClickListener() {

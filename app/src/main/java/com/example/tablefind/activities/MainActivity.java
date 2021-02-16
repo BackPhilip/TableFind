@@ -182,7 +182,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //
         //Name      : onKey for search bar
-        //Purpose          : Filters through restaurant list and displays restaurants that contain search parameters.
+        //Purpose   : Filters through restaurant list and displays restaurants that contain search parameters.
         //
         etSearch.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -199,6 +199,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     searchedRestaurants = list;
                     adapter = new RestaurantAdapter(MainActivity.this, searchedRestaurants);
                     lvList.setAdapter(adapter);
+
                 }
                 return true;
             }
@@ -206,7 +207,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //
         //Name      : onItemClick for searched restaurants
-        //Purpose          : sets selected restaurant in Application Class and moves on to TableList activity
+        //Purpose   : sets selected restaurant in Application Class and moves on to TableList activity
         //
 
         lvList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -376,7 +377,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //Method Name      : boolean onLocationClose()
     //Purpose          : Tests for proximity conditions between two locations.
     //Re-use           : distance()
-    // Input Parameters : Location, Location
+    //Input Parameters : Location, Location
     //Output Type      : boolean
     //
 
@@ -406,7 +407,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //Method Name      : void getLocation()
     //Purpose          : Checks for device location.
     //Re-use           : none
-    // Input Parameters : none
+    //Input Parameters : none
     //Output Type      : void
     //
     private void getLocation()
@@ -436,7 +437,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //Method Name      : double distance()
     //Purpose          : Calculates the distance between two locations.
     //Re-use           : none
-    // Input Parameters : double, double, double, double
+    //Input Parameters : double, double, double, double
     //Output Type      : double
     //
 

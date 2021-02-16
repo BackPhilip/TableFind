@@ -120,7 +120,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
     //
     //Method Name      : boolean onOptionItemSelected()
     //Purpose          : Passes the selected item.
-    //Re-use           :
+    //Re-use           : N/A
     //Input Parameters : MenuItem
     //Output Type      : boolean
     //
@@ -137,7 +137,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
     //
     //Method Name      : boolean onNavigationItemSelected()
     //Purpose          : implements the selected navigation function.
-    //Re-use           : none
+    //Re-use           : N/A
     //Input Parameters : MenuItem
     //Output Type      : boolean
     //
@@ -249,7 +249,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
 
     //
     //Method Name      : void exitByBackKey()
-    //Purpose          : ***
+    //Purpose          : Logic that is executed when the back key is tapped
     //Re-use           : none
     //Input Parameters : none
     //Output Type      : void
