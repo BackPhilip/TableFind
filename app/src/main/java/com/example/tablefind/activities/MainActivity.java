@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         location.setLongitude(Double.parseDouble(separated[1].trim()));
 
                         Location myLocation = new Location("");
-                        if (addresses.get(0) != null)
+                        if (!addresses.isEmpty())
                         {
                             myLocation.setLongitude(addresses.get(0).getLongitude());
                             myLocation.setLatitude(addresses.get(0).getLatitude());
