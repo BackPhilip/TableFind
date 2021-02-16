@@ -128,11 +128,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         }
                     }
                     allRestaurants = ApplicationClass.restaurants;
-                    adapter = new RestaurantAdapter(MainActivity.this, response);
+                    adapter = new RestaurantAdapter(MainActivity.this, ApplicationClass.restaurants);
                     lvList.setAdapter(adapter);
                     Location location = new Location("");
 
-                    for (Restaurant restaurant : response) {
+                    for (Restaurant restaurant : ApplicationClass.restaurants) {
                         String locationString = restaurant.getLocationGPS();
                         String[] separated = locationString.split(",");
                         location.setLatitude(Double.parseDouble(separated[0].trim()));
