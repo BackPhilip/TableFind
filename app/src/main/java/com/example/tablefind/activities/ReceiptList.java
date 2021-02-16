@@ -271,4 +271,11 @@ public class ReceiptList extends AppCompatActivity implements NavigationView.OnN
         startActivity(intent);
         ReceiptList.this.finish();
     }//end method
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        ApplicationClass.reservations.clear();
+    }
 }
