@@ -7,7 +7,7 @@
         android:icon="@drawable/exit"
         app:showAsAction="always"/>
 
-    <item android:title="My Detail List"
+    <item android:title="Reservations"
         android:id="@+id/receipt"
         android:orderInCategory="100"
         android:icon="@drawable/listbtn"
