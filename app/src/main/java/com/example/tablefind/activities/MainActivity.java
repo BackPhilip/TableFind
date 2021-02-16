@@ -224,6 +224,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 {
                     ApplicationClass.restaurant = ApplicationClass.restaurants.get(i);
                 }
+                restaurantsWLocation.clear();
+                searchedRestaurants.clear();
+                ApplicationClass.restaurants.clear();
                 Intent intent = new Intent(MainActivity.this, TableList.class);
                 startActivity(intent);
                 MainActivity.this.finish();
