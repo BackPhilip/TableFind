@@ -110,6 +110,7 @@ public class Register extends AppCompatActivity {
 
                                     @Override
                                     public void handleFault(BackendlessFault fault) {
+                                        ApplicationClass.showToast("An Email Has Been Sent To You!", 1, Register.this);
                                         Register.this.finish();
                                         showProgress(false);
                                     }

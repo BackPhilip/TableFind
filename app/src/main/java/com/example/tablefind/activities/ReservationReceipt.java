@@ -10,6 +10,7 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.pdf.PdfDocument;
 import android.net.Uri;
@@ -82,20 +83,27 @@ public class ReservationReceipt extends AppCompatActivity {
         showProgress(true);
         tvLoad.setText("Retrieving Details...");
 
-        Backendless.Persistence.of(RestaurantTable.class).find(new AsyncCallback<List<RestaurantTable>>() {
+        String whereClause = "objectId = '" + ApplicationClass.reservation.getTableId().trim() + "'";
+        DataQueryBuilder queryBuilder = DataQueryBuilder.create();
+        queryBuilder.setWhereClause(whereClause);
+        queryBuilder.setPageSize(100);
+
+        Backendless.Persistence.of(RestaurantTable.class).find(queryBuilder, new AsyncCallback<List<RestaurantTable>>() {
             @Override
             public void handleResponse(List<RestaurantTable> response) {
                 ApplicationClass.table = response.get(0);
                 ApplicationClass.tables.addAll(response);
 
-                String whereClause = "objectId = '" + ApplicationClass.reservation.getRestaurantId() + "'";
+                String whereClause = "objectId = '" + ApplicationClass.reservation.getRestaurantId().trim() + "'";
                 DataQueryBuilder queryBuilder = DataQueryBuilder.create();
                 queryBuilder.setWhereClause(whereClause);
+                queryBuilder.setPageSize(100);
 
                 Backendless.Persistence.of(Restaurant.class).find(queryBuilder, new AsyncCallback<List<Restaurant>>() {
                     @Override
                     public void handleResponse(List<Restaurant> response) {
                         ApplicationClass.restaurant = response.get(0);
+                        ApplicationClass.restaurants.addAll(response);
 
                         receiptUser.setText(ApplicationClass.user.getProperty("FirstName").toString().trim() + " " + ApplicationClass.user.getProperty("LastName").toString().trim());
                         receiptUserNumber.setText(ApplicationClass.user.getProperty("Cellphone").toString().trim());
@@ -103,6 +111,7 @@ public class ReservationReceipt extends AppCompatActivity {
 
                         receiptRestaurantName.setText(ApplicationClass.restaurant.getName());
                         receiptRestaurantLocation.setText(ApplicationClass.restaurant.getLocationString() + "(Click Here For Google Maps Location)");
+                        receiptRestaurantLocation.setTextColor(Color.GREEN);
                         receiptRestaurantNumber.setText(ApplicationClass.restaurant.getContactNumber());
 
                         receiptReservationFrom.setText(ApplicationClass.reservation.getTakenFrom().toString());
@@ -132,9 +141,9 @@ public class ReservationReceipt extends AppCompatActivity {
         receiptRestaurantLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri gmmIntentUri = Uri.parse(ApplicationClass.restaurant.getLocationGPS());
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW);
                 mapIntent.setPackage("com.google.android.apps.maps");
+                mapIntent.setData(Uri.parse("geo:" + ApplicationClass.restaurant.getLocationGPS()));
                 startActivity(mapIntent);
             }
         });
@@ -326,4 +335,13 @@ public class ReservationReceipt extends AppCompatActivity {
         }
         myPdfDocument.close();
     }//end method
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        ApplicationClass.restaurants.clear();
+        ApplicationClass.tables.clear();
+        ApplicationClass.reservations.clear();
+    }
 }

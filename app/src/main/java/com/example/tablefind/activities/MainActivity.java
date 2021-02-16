@@ -460,4 +460,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return dist;
     }//end method
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        ApplicationClass.restaurants.clear();
+        restaurantsWLocation.clear();
+        searchedRestaurants.clear();
+    }
 }

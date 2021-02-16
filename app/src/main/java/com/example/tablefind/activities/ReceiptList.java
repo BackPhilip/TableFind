@@ -86,8 +86,14 @@ public class ReceiptList extends AppCompatActivity implements NavigationView.OnN
             public void handleResponse(List<Reservation> response) {
                 if (response.size() != 0)
                 {
-                    ApplicationClass.reservations.addAll(response);
-                    adapter = new ReceiptAdapter(ReceiptList.this, response);
+                    for (Reservation reservation : response)
+                    {
+                        if (reservation.getActive())
+                        {
+                            ApplicationClass.reservations.add(reservation);
+                        }
+                    }
+                    adapter = new ReceiptAdapter(ReceiptList.this, ApplicationClass.reservations);
                     receiptLvList.setAdapter(adapter);
                     showProgress(false);
                 }

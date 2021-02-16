@@ -145,8 +145,8 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         showLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Uri gmmIntentUri = Uri.parse(ApplicationClass.restaurant.getLocationGPS());
-                Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                Intent mapIntent = new Intent(Intent.ACTION_VIEW);
+                mapIntent.setData(Uri.parse("geo:" + ApplicationClass.restaurant.getLocationGPS()));
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
             }
@@ -307,6 +307,11 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
 
                     ApplicationClass.reservations.addAll(response);
 
+                    for (RestaurantTable table : ApplicationClass.tables)
+                    {
+                        table.setAvailable(true);
+                    }
+
                     for (Reservation reservation : response) {
                         if (requiredDate.after(reservation.getTakenFrom()) && requiredDate.before(reservation.getTakenTo())) {
                             for (RestaurantTable table : ApplicationClass.tables) {
@@ -436,4 +441,11 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         startActivity(intent);
         TableList.this.finish();
     }//end method
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        ApplicationClass.tables.clear();
+    }
 }
