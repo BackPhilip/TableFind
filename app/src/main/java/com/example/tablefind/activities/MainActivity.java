@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 {
                     ArrayList<Restaurant> list = new ArrayList<>();
                     for (Restaurant restaurant : ApplicationClass.restaurants) {
-                        if (restaurant.getName().toLowerCase().trim().startsWith(etSearch.getText().toString().trim().toLowerCase())) {
+                        if (restaurant.getName().toLowerCase().trim().contains(etSearch.getText().toString().trim().toLowerCase())) {
                             list.add(restaurant);
                         }
                     }
