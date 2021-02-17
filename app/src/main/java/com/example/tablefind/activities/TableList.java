@@ -440,12 +440,6 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
         Intent intent = new Intent(TableList.this, MainActivity.class);
         startActivity(intent);
         TableList.this.finish();
-    }//end method
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
         ApplicationClass.tables.clear();
-    }
+    }//end method
 }

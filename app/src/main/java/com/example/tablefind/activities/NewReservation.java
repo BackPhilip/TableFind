@@ -282,7 +282,7 @@ public class NewReservation extends AppCompatActivity implements NavigationView.
                         public void handleResponse(Reservation response) {
                             ApplicationClass.showToast("Successfully Reserved!", 1, NewReservation.this);
                             showProgress(false);
-                            ApplicationClass.reservation = reservation;
+                            ApplicationClass.reservation = response;
                             Intent intent = new Intent(NewReservation.this, ReservationReceipt.class);
                             startActivity(intent);
                             NewReservation.this.finish();
