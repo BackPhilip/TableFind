@@ -2,21 +2,15 @@ com/example/tablefind/app_utilities/MenuAdapter.java
  com.example.tablefind.app_utilities.MenuAdapter
  com.example.tablefind.app_utilities.MenuAdapter$1
  com.example.tablefind.app_utilities.MenuAdapter$2
-com/example/tablefind/activities/TableList.java
- com.example.tablefind.activities.TableList
- com.example.tablefind.activities.TableList$1
- com.example.tablefind.activities.TableList$10
- com.example.tablefind.activities.TableList$11
- com.example.tablefind.activities.TableList$12
- com.example.tablefind.activities.TableList$2
- com.example.tablefind.activities.TableList$3
- com.example.tablefind.activities.TableList$4
- com.example.tablefind.activities.TableList$5
- com.example.tablefind.activities.TableList$6
- com.example.tablefind.activities.TableList$7
- com.example.tablefind.activities.TableList$8
- com.example.tablefind.activities.TableList$9
- com.example.tablefind.activities.TableList$9$1
+com/example/tablefind/activities/Menu.java
+ com.example.tablefind.activities.Menu
+ com.example.tablefind.activities.Menu$1
+ com.example.tablefind.activities.Menu$2
+ com.example.tablefind.activities.Menu$3
+ com.example.tablefind.activities.Menu$4
+ com.example.tablefind.activities.Menu$5
+ com.example.tablefind.activities.Menu$6
+ com.example.tablefind.activities.Menu$7
 com/example/tablefind/app_utilities/RestaurantAdapter.java
  com.example.tablefind.app_utilities.RestaurantAdapter
  com.example.tablefind.app_utilities.RestaurantAdapter$1
@@ -53,13 +47,17 @@ com/example/tablefind/activities/MenuItemDetail.java
  com.example.tablefind.activities.MenuItemDetail$1
  com.example.tablefind.activities.MenuItemDetail$2
  com.example.tablefind.activities.MenuItemDetail$3
-com/example/tablefind/activities/Profile.java
- com.example.tablefind.activities.Profile
- com.example.tablefind.activities.Profile$1
- com.example.tablefind.activities.Profile$2
- com.example.tablefind.activities.Profile$2$1
- com.example.tablefind.activities.Profile$2$2
- com.example.tablefind.activities.Profile$2$2$1
+com/example/tablefind/activities/NewReservation.java
+ com.example.tablefind.activities.NewReservation
+ com.example.tablefind.activities.NewReservation$1
+ com.example.tablefind.activities.NewReservation$2
+ com.example.tablefind.activities.NewReservation$3
+ com.example.tablefind.activities.NewReservation$4
+ com.example.tablefind.activities.NewReservation$5
+ com.example.tablefind.activities.NewReservation$6
+ com.example.tablefind.activities.NewReservation$7
+ com.example.tablefind.activities.NewReservation$8
+ com.example.tablefind.activities.NewReservation$8$1
 com/example/tablefind/app_utilities/ApplicationClass.java
  com.example.tablefind.app_utilities.ApplicationClass
 com/example/tablefind/data_models/Restaurant.java
@@ -91,26 +89,28 @@ com/example/tablefind/activities/MainActivity.java
  com.example.tablefind.activities.MainActivity$7
  com.example.tablefind.activities.MainActivity$8
  com.example.tablefind.activities.MainActivity$9
-com/example/tablefind/activities/Menu.java
- com.example.tablefind.activities.Menu
- com.example.tablefind.activities.Menu$1
- com.example.tablefind.activities.Menu$2
- com.example.tablefind.activities.Menu$3
- com.example.tablefind.activities.Menu$4
- com.example.tablefind.activities.Menu$5
- com.example.tablefind.activities.Menu$6
- com.example.tablefind.activities.Menu$7
-com/example/tablefind/activities/NewReservation.java
- com.example.tablefind.activities.NewReservation
- com.example.tablefind.activities.NewReservation$1
- com.example.tablefind.activities.NewReservation$2
- com.example.tablefind.activities.NewReservation$3
- com.example.tablefind.activities.NewReservation$4
- com.example.tablefind.activities.NewReservation$5
- com.example.tablefind.activities.NewReservation$6
- com.example.tablefind.activities.NewReservation$7
- com.example.tablefind.activities.NewReservation$8
- com.example.tablefind.activities.NewReservation$8$1
+com/example/tablefind/activities/Profile.java
+ com.example.tablefind.activities.Profile
+ com.example.tablefind.activities.Profile$1
+ com.example.tablefind.activities.Profile$2
+ com.example.tablefind.activities.Profile$2$1
+ com.example.tablefind.activities.Profile$2$2
+ com.example.tablefind.activities.Profile$2$2$1
+com/example/tablefind/activities/TableList.java
+ com.example.tablefind.activities.TableList
+ com.example.tablefind.activities.TableList$1
+ com.example.tablefind.activities.TableList$10
+ com.example.tablefind.activities.TableList$11
+ com.example.tablefind.activities.TableList$12
+ com.example.tablefind.activities.TableList$2
+ com.example.tablefind.activities.TableList$3
+ com.example.tablefind.activities.TableList$4
+ com.example.tablefind.activities.TableList$5
+ com.example.tablefind.activities.TableList$6
+ com.example.tablefind.activities.TableList$7
+ com.example.tablefind.activities.TableList$8
+ com.example.tablefind.activities.TableList$9
+ com.example.tablefind.activities.TableList$9$1
 com/example/tablefind/activities/ReceiptList.java
  com.example.tablefind.activities.ReceiptList
  com.example.tablefind.activities.ReceiptList$1
