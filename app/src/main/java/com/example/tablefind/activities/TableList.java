@@ -139,6 +139,7 @@ public class TableList extends AppCompatActivity implements NavigationView.OnNav
                 Intent intent = new Intent(TableList.this, com.example.tablefind.activities.Menu.class);
                 startActivity(intent);
                 TableList.this.finish();
+                ApplicationClass.tables.clear();
             }
         });
 
