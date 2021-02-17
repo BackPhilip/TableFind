@@ -160,7 +160,6 @@ public class ReservationReceipt extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 exportAsPdf();
-                ApplicationClass.showToast("Exported as My Details.pdf", 1, ReservationReceipt.this);
             }
         });
     }
@@ -330,6 +329,7 @@ public class ReservationReceipt extends AppCompatActivity {
         File myFile = new File(filePath);
         try {
             myPdfDocument.writeTo(new FileOutputStream(myFile));
+            ApplicationClass.showToast("Exported as My Details.pdf", 1, ReservationReceipt.this);
         } catch (Exception e) {
             ApplicationClass.showToast("Error: " + e.getMessage(), 2, ReservationReceipt.this);
         }
