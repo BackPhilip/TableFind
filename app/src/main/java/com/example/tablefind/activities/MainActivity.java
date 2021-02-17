@@ -127,7 +127,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             ApplicationClass.restaurants.add(restaurant);
                         }
                     }
-                    allRestaurants = ApplicationClass.restaurants;
                     adapter = new RestaurantAdapter(MainActivity.this, ApplicationClass.restaurants);
                     lvList.setAdapter(adapter);
                     Location location = new Location("");
@@ -139,10 +138,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         location.setLongitude(Double.parseDouble(separated[1].trim()));
 
                         Location myLocation = new Location("");
-                        if (addresses != null || !addresses.isEmpty())
+                        if (addresses != null)
                         {
-                            myLocation.setLongitude(addresses.get(0).getLongitude());
-                            myLocation.setLatitude(addresses.get(0).getLatitude());
+                            if (!addresses.isEmpty()) {
+                                myLocation.setLongitude(addresses.get(0).getLongitude());
+                                myLocation.setLatitude(addresses.get(0).getLatitude());
+                            }
                         }
 
                         if (onLocationCLose(location, myLocation) == true)
