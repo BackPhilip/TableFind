@@ -260,4 +260,11 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
         startActivity(intent);
         Menu.this.finish();
     }//end method
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        ApplicationClass.menuItems.clear();
+    }
 }
