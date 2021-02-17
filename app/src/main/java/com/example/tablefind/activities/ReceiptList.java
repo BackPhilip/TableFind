@@ -270,12 +270,6 @@ public class ReceiptList extends AppCompatActivity implements NavigationView.OnN
         Intent intent = new Intent(ReceiptList.this, MainActivity.class);
         startActivity(intent);
         ReceiptList.this.finish();
-    }//end method
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
         ApplicationClass.reservations.clear();
-    }
+    }//end method
 }

@@ -45,26 +45,18 @@ com/example/tablefind/BuildConfig.java
  com.example.tablefind.BuildConfig
 com/example/tablefind/app_utilities/TableAdapter.java
  com.example.tablefind.app_utilities.TableAdapter
-com/example/tablefind/activities/ReceiptList.java
- com.example.tablefind.activities.ReceiptList
- com.example.tablefind.activities.ReceiptList$1
- com.example.tablefind.activities.ReceiptList$2
- com.example.tablefind.activities.ReceiptList$3
- com.example.tablefind.activities.ReceiptList$4
- com.example.tablefind.activities.ReceiptList$5
- com.example.tablefind.activities.ReceiptList$6
- com.example.tablefind.activities.ReceiptList$7
-com/example/tablefind/activities/NewReservation.java
- com.example.tablefind.activities.NewReservation
- com.example.tablefind.activities.NewReservation$1
- com.example.tablefind.activities.NewReservation$2
- com.example.tablefind.activities.NewReservation$3
- com.example.tablefind.activities.NewReservation$4
- com.example.tablefind.activities.NewReservation$5
- com.example.tablefind.activities.NewReservation$6
- com.example.tablefind.activities.NewReservation$7
- com.example.tablefind.activities.NewReservation$8
- com.example.tablefind.activities.NewReservation$8$1
+com/example/tablefind/activities/MenuItemDetail.java
+ com.example.tablefind.activities.MenuItemDetail
+ com.example.tablefind.activities.MenuItemDetail$1
+ com.example.tablefind.activities.MenuItemDetail$2
+ com.example.tablefind.activities.MenuItemDetail$3
+com/example/tablefind/activities/Profile.java
+ com.example.tablefind.activities.Profile
+ com.example.tablefind.activities.Profile$1
+ com.example.tablefind.activities.Profile$2
+ com.example.tablefind.activities.Profile$2$1
+ com.example.tablefind.activities.Profile$2$2
+ com.example.tablefind.activities.Profile$2$2$1
 com/example/tablefind/app_utilities/ApplicationClass.java
  com.example.tablefind.app_utilities.ApplicationClass
 com/example/tablefind/data_models/Restaurant.java
@@ -96,13 +88,6 @@ com/example/tablefind/activities/MainActivity.java
  com.example.tablefind.activities.MainActivity$7
  com.example.tablefind.activities.MainActivity$8
  com.example.tablefind.activities.MainActivity$9
-com/example/tablefind/activities/Profile.java
- com.example.tablefind.activities.Profile
- com.example.tablefind.activities.Profile$1
- com.example.tablefind.activities.Profile$2
- com.example.tablefind.activities.Profile$2$1
- com.example.tablefind.activities.Profile$2$2
- com.example.tablefind.activities.Profile$2$2$1
 com/example/tablefind/activities/Menu.java
  com.example.tablefind.activities.Menu
  com.example.tablefind.activities.Menu$1
@@ -127,8 +112,23 @@ com/example/tablefind/activities/TableList.java
  com.example.tablefind.activities.TableList$8
  com.example.tablefind.activities.TableList$9
  com.example.tablefind.activities.TableList$9$1
-com/example/tablefind/activities/MenuItemDetail.java
- com.example.tablefind.activities.MenuItemDetail
- com.example.tablefind.activities.MenuItemDetail$1
- com.example.tablefind.activities.MenuItemDetail$2
- com.example.tablefind.activities.MenuItemDetail$3
+com/example/tablefind/activities/NewReservation.java
+ com.example.tablefind.activities.NewReservation
+ com.example.tablefind.activities.NewReservation$1
+ com.example.tablefind.activities.NewReservation$2
+ com.example.tablefind.activities.NewReservation$3
+ com.example.tablefind.activities.NewReservation$4
+ com.example.tablefind.activities.NewReservation$5
+ com.example.tablefind.activities.NewReservation$6
+ com.example.tablefind.activities.NewReservation$7
+ com.example.tablefind.activities.NewReservation$8
+ com.example.tablefind.activities.NewReservation$8$1
+com/example/tablefind/activities/ReceiptList.java
+ com.example.tablefind.activities.ReceiptList
+ com.example.tablefind.activities.ReceiptList$1
+ com.example.tablefind.activities.ReceiptList$2
+ com.example.tablefind.activities.ReceiptList$3
+ com.example.tablefind.activities.ReceiptList$4
+ com.example.tablefind.activities.ReceiptList$5
+ com.example.tablefind.activities.ReceiptList$6
+ com.example.tablefind.activities.ReceiptList$7
